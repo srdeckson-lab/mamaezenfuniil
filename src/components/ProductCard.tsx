@@ -18,7 +18,7 @@ export const ProductCard = ({ title, description, image, link, badge }: ProductC
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       <Link to={link}>
-        <Card className="overflow-hidden border-0 shadow-soft hover:shadow-hover transition-all duration-500 bg-gradient-card group">
+        <Card className="overflow-hidden border-0 shadow-lg shadow-pink-500/10 hover:shadow-pink-500/30 transition-all duration-500 bg-gradient-to-br from-pink-800/90 to-pink-700/90 backdrop-blur group border border-pink-400/20">
           <div className="relative aspect-[3/4] overflow-hidden">
             <img 
               src={image} 
@@ -26,17 +26,17 @@ export const ProductCard = ({ title, description, image, link, badge }: ProductC
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             {badge && (
-              <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold shadow-elevated">
+              <div className="absolute top-4 right-4 bg-pink-500 text-white px-4 py-1.5 rounded-full text-sm font-semibold shadow-lg">
                 {badge}
               </div>
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-pink-900/80 via-pink-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
           <div className="p-6">
-            <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300">
+            <h3 className="text-xl font-bold mb-2 text-pink-100 group-hover:text-pink-300 transition-colors duration-300">
               {title}
             </h3>
-            <p className="text-muted-foreground line-clamp-2">{description}</p>
+            <p className="text-pink-200 line-clamp-2">{description}</p>
           </div>
         </Card>
       </Link>
