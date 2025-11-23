@@ -6,6 +6,8 @@ import cinemaMamae from "@/assets/cinema-mamae.jpg";
 import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
 import guiaMaeNinja from "@/assets/guia-mae-ninja.png";
 import sonsCalmantes from "@/assets/sons-calmantes.jpg";
+import UrgencyBar from "@/components/UrgencyBar";
+import SocialProofNotifications from "@/components/SocialProofNotifications";
 
 const ComboVitalicio = () => {
   const benefits = [
@@ -20,16 +22,36 @@ const ComboVitalicio = () => {
   ];
 
   const products = [
-    { image: guiaMaeNinja, title: "Guia da Mãe Ninja 2.0" },
-    { image: euOdeioSerMae, title: "Eu Odeio Ser Mãe" },
-    { image: sonsCalmantes, title: "Sons Calmantes Premium" },
-    { image: cinemaMamae, title: "Cinema da Mamãe (BÔNUS)", badge: "GRÁTIS" },
+    { 
+      image: guiaMaeNinja, 
+      title: "Guia da Mãe Ninja 2.0",
+      description: "O guia completo para mães que querem dominar a maternidade real, sem filtros. Estratégias práticas, organizadas e diretas para lidar com o caos diário."
+    },
+    { 
+      image: euOdeioSerMae, 
+      title: "Eu Odeio Ser Mãe",
+      description: "O livro que vai te fazer sentir menos sozinha. Histórias reais, sem romantização, sobre os desafios, frustrações e verdades que ninguém te contou sobre ser mãe."
+    },
+    { 
+      image: sonsCalmantes, 
+      title: "Sons Calmantes Premium",
+      description: "Biblioteca completa de sons relaxantes para acalmar seu bebê e criar rotinas de sono mais tranquilas. Técnicas comprovadas para noites mais serenas."
+    },
+    { 
+      image: cinemaMamae, 
+      title: "Cinema da Mamãe",
+      badge: "GRÁTIS",
+      description: "Acesso vitalício a uma coleção exclusiva de conteúdos audiovisuais sobre maternidade real. Documentários, entrevistas e histórias inspiradoras de mães reais."
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <UrgencyBar />
+      <SocialProofNotifications />
+      
       {/* Header */}
-      <header className="border-b border-red-500/30 bg-slate-950/50 backdrop-blur-lg sticky top-0 z-50">
+      <header className="border-b border-red-500/30 bg-slate-950/50 backdrop-blur-lg sticky top-[52px] z-40">
         <div className="container mx-auto px-4 py-4">
           <Link to="/">
             <Button variant="ghost" className="hover:bg-red-500/10 text-slate-100">
@@ -55,31 +77,35 @@ const ComboVitalicio = () => {
           </p>
         </div>
 
-        {/* Products Preview */}
+        {/* Products Preview with Descriptions */}
         <div className="max-w-5xl mx-auto mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-red-100">
             Tudo que você vai receber:
           </h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {products.map((product, index) => (
               <Card key={index} className="relative overflow-hidden border-red-500/30 bg-slate-800/50 backdrop-blur group hover:border-red-500/50 transition-all duration-300">
-                <div className="aspect-[3/4] relative overflow-hidden">
-                  <img 
-                    src={product.image} 
-                    alt={product.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  {product.badge && (
-                    <div className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                      {product.badge}
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent" />
-                </div>
-                <div className="p-3 md:p-4">
-                  <h3 className="text-sm md:text-base font-semibold text-red-100 text-center leading-tight">
-                    {product.title}
-                  </h3>
+                <div className="flex flex-col md:flex-row gap-4 p-4">
+                  <div className="w-full md:w-32 h-40 md:h-auto relative overflow-hidden rounded-lg flex-shrink-0">
+                    <img 
+                      src={product.image} 
+                      alt={product.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    {product.badge && (
+                      <div className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                        {product.badge}
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center">
+                    <h3 className="text-lg font-bold text-red-100 mb-2">
+                      {product.title}
+                    </h3>
+                    <p className="text-sm text-slate-300 leading-relaxed">
+                      {product.description}
+                    </p>
+                  </div>
                 </div>
               </Card>
             ))}
@@ -124,16 +150,16 @@ const ComboVitalicio = () => {
                 </div>
               </div>
 
-              <div className="w-full flex justify-center">
-                <Button 
-                  size="lg" 
-                  className="w-full max-w-md text-base md:text-lg px-8 py-7 md:py-8 rounded-xl shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold mb-6"
-                >
-                  <Sparkles className="mr-3 flex-shrink-0 group-hover:rotate-180 transition-transform duration-500" />
-                  <span className="flex-1 text-center">Garantir Acesso Vitalício</span>
-                  <Crown className="ml-3 flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
-                </Button>
-              </div>
+              <Button 
+                size="lg" 
+                className="w-full max-w-md h-auto min-h-[60px] text-lg px-6 py-4 rounded-xl shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold mb-6"
+              >
+                <span className="flex items-center justify-center gap-3 w-full">
+                  <Sparkles className="w-5 h-5 flex-shrink-0 group-hover:rotate-180 transition-transform duration-500" />
+                  <span className="whitespace-normal leading-tight">Garantir Acesso Vitalício</span>
+                  <Crown className="w-5 h-5 flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
+                </span>
+              </Button>
 
               <div className="flex items-center justify-center gap-2 text-sm text-slate-400">
                 <Star className="w-4 h-4 fill-red-500 text-red-500" />
