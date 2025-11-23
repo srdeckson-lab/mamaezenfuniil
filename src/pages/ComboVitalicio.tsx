@@ -44,13 +44,13 @@ const ComboVitalicio = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Pricing Card */}
+        {/* Pricing Card */}
+        <div className="max-w-2xl mx-auto mb-12">
           <Card className="p-8 lg:p-12 bg-gradient-card shadow-elevated border-primary/20 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
             
-            <div className="relative z-10">
+            <div className="relative z-10 flex flex-col items-center text-center">
               <div className="inline-flex items-center gap-2 bg-accent/20 px-4 py-1.5 rounded-full mb-6">
                 <Gift className="w-4 h-4 text-accent-foreground" />
                 <span className="text-sm font-semibold text-accent-foreground">
@@ -58,56 +58,61 @@ const ComboVitalicio = () => {
                 </span>
               </div>
 
-              <div className="mb-8">
-                <div className="flex items-baseline gap-3 mb-2">
-                  <span className="text-3xl text-muted-foreground line-through">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+                Combo Vitalício Premium
+              </h2>
+              
+              <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-md">
+                Acesso completo a todos os produtos + Cinema da Mamãe de bônus
+              </p>
+
+              <div className="mb-8 flex flex-col items-center w-full">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <span className="text-xl md:text-2xl text-muted-foreground line-through">
                     R$ 297,90
                   </span>
                 </div>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                <div className="flex items-baseline justify-center gap-2 mb-4">
+                  <span className="text-4xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                     R$ 197,90
                   </span>
-                  <span className="text-xl text-muted-foreground">
-                    vitalício
-                  </span>
                 </div>
-                <div className="mt-4 inline-block bg-primary/10 text-primary px-6 py-2 rounded-full font-semibold">
+                <div className="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full font-semibold text-sm md:text-base">
                   Economize R$ 100,00
                 </div>
               </div>
 
-              <div className="flex flex-col items-center w-full">
-                <Button 
-                  size="lg" 
-                  className="w-full text-xl py-7 rounded-xl shadow-elevated hover:shadow-hover transition-all duration-300 bg-gradient-primary border-0 group mb-6"
-                >
-                  <Sparkles className="mr-2 group-hover:rotate-180 transition-transform duration-500" />
-                  Garantir Acesso Vitalício
-                  <Crown className="ml-2 group-hover:scale-125 transition-transform duration-300" />
-                </Button>
+              <Button 
+                size="lg" 
+                className="w-full max-w-md text-base md:text-xl py-6 md:py-7 rounded-xl shadow-elevated hover:shadow-hover transition-all duration-300 bg-gradient-primary border-0 group mb-6"
+              >
+                <Sparkles className="mr-2 group-hover:rotate-180 transition-transform duration-500" />
+                Garantir Acesso Vitalício
+                <Crown className="ml-2 group-hover:scale-125 transition-transform duration-300" />
+              </Button>
 
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Star className="w-4 h-4 fill-primary text-primary" />
-                  <span>Pagamento único e seguro</span>
-                </div>
+              <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                <Star className="w-4 h-4 fill-primary text-primary" />
+                <span>Pagamento único e seguro</span>
               </div>
             </div>
           </Card>
+        </div>
 
-          {/* Benefits Card */}
+        {/* Benefits Section */}
+        <div className="max-w-2xl mx-auto mb-16">
           <Card className="p-8 lg:p-12 bg-gradient-card shadow-elevated border-primary/20">
-            <h2 className="text-3xl font-bold mb-8 text-foreground flex items-center gap-3">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground flex items-center justify-center gap-3">
               <Crown className="w-8 h-8 text-primary" />
               O que está incluído
             </h2>
             <ul className="space-y-4">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start gap-3 group">
-                  <div className="mt-1 bg-primary/10 rounded-full p-1 group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="mt-1 bg-primary/10 rounded-full p-1 group-hover:bg-primary/20 transition-colors duration-300 flex-shrink-0">
                     <Check className="w-5 h-5 text-primary" />
                   </div>
-                  <span className="text-lg text-foreground group-hover:text-primary transition-colors duration-300">
+                  <span className="text-base md:text-lg text-foreground group-hover:text-primary transition-colors duration-300">
                     {benefit}
                   </span>
                 </li>
@@ -117,12 +122,12 @@ const ComboVitalicio = () => {
         </div>
 
         {/* Trust Section */}
-        <div className="mt-16 text-center max-w-3xl mx-auto">
-          <div className="bg-muted/50 rounded-2xl p-8 border border-border/50">
-            <h3 className="text-2xl font-bold mb-4 text-foreground">
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-muted/50 rounded-2xl p-8 border border-border/50 text-center">
+            <h3 className="text-xl md:text-2xl font-bold mb-4 text-foreground">
               Garantia de Satisfação
             </h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-sm md:text-base">
               Experimente sem riscos. Se não estiver completamente satisfeita nos primeiros 7 dias, 
               devolvemos 100% do seu investimento.
             </p>
