@@ -56,15 +56,15 @@ const Home = () => {
               Recursos exclusivos para mães que querem tranquilidade,<br />
               conhecimento e momentos especiais
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/combo-vitalicio">
-                <Button size="lg" className="text-lg px-8 py-6 rounded-full shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 transition-all duration-300 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 border-0 group text-white font-bold">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-2xl mx-auto">
+              <Link to="/combo-vitalicio" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full text-lg px-8 py-6 rounded-full shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 transition-all duration-300 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 border-0 group text-white font-bold">
                   <Gift className="mr-2 group-hover:rotate-12 transition-transform duration-300" />
                   Ver Combo Vitalício
                   <Sparkles className="ml-2 group-hover:scale-125 transition-transform duration-300" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-2 border-pink-400/40 hover:border-pink-400 hover:bg-pink-400/10 transition-all duration-300 text-pink-100">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 py-6 rounded-full border-2 border-pink-400/40 hover:border-pink-400 hover:bg-pink-400/10 transition-all duration-300 text-pink-100">
                 Explorar Produtos
               </Button>
             </div>
@@ -123,8 +123,8 @@ const Home = () => {
                 Economize R$ 100,00
               </span>
             </div>
-            <Link to="/combo-vitalicio">
-              <Button size="lg" className="text-xl px-12 py-7 rounded-full shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 transition-all duration-300 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 border-0 group text-white font-bold">
+            <Link to="/combo-vitalicio" className="w-full sm:w-auto flex justify-center">
+              <Button size="lg" className="w-full sm:w-auto text-xl px-12 py-7 rounded-full shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 transition-all duration-300 bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 border-0 group text-white font-bold">
                 <Sparkles className="mr-2 group-hover:rotate-180 transition-transform duration-500" />
                 Garantir Acesso Vitalício
               </Button>

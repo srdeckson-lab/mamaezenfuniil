@@ -77,18 +77,20 @@ const ComboVitalicio = () => {
                 </div>
               </div>
 
-              <Button 
-                size="lg" 
-                className="w-full text-xl py-7 rounded-xl shadow-elevated hover:shadow-hover transition-all duration-300 bg-gradient-primary border-0 group mb-6"
-              >
-                <Sparkles className="mr-2 group-hover:rotate-180 transition-transform duration-500" />
-                Garantir Acesso Agora
-                <Crown className="ml-2 group-hover:scale-125 transition-transform duration-300" />
-              </Button>
+              <div className="flex flex-col items-center w-full">
+                <Button 
+                  size="lg" 
+                  className="w-full text-xl py-7 rounded-xl shadow-elevated hover:shadow-hover transition-all duration-300 bg-gradient-primary border-0 group mb-6"
+                >
+                  <Sparkles className="mr-2 group-hover:rotate-180 transition-transform duration-500" />
+                  Garantir Acesso Vitalício
+                  <Crown className="ml-2 group-hover:scale-125 transition-transform duration-300" />
+                </Button>
 
-              <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                <Star className="w-4 h-4 fill-primary text-primary" />
-                <span>Pagamento único e seguro</span>
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                  <Star className="w-4 h-4 fill-primary text-primary" />
+                  <span>Pagamento único e seguro</span>
+                </div>
               </div>
             </div>
           </Card>
