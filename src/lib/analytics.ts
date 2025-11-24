@@ -11,6 +11,7 @@ declare global {
     rejectUpsell: () => void;
     signupEvent: () => void;
     loginEvent: () => void;
+    changeOfMind: () => void;
   }
 }
 
@@ -64,5 +65,12 @@ export const trackProductView = (productName: string) => {
         item_name: productName
       }]
     });
+  }
+};
+
+// Evento: Cliente mudou de ideia
+export const trackChangeOfMind = () => {
+  if (typeof window !== 'undefined' && window.changeOfMind) {
+    window.changeOfMind();
   }
 };
