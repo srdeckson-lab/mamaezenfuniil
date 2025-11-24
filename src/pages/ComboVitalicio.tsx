@@ -130,26 +130,48 @@ const ComboVitalicio = () => {
               </div>
 
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-red-100">
-                Acabe Com Isso HOJE
+                Você Gastaria MUITO Mais Tentando Se Cuidar
               </h2>
               
-              <p className="text-base md:text-lg text-slate-300 mb-8 max-w-md">
-                Tudo que você precisa pra sobreviver à maternidade real. Sem enrolação.
+              <div className="bg-slate-900/80 rounded-xl p-6 mb-6 border border-red-500/20">
+                <p className="text-sm text-slate-400 mb-3 font-semibold">Se você fosse resolver isso tudo do jeito tradicional:</p>
+                <div className="space-y-2 text-left">
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-300">💰 Psicólogo (4 sessões)</span>
+                    <span className="text-red-400 font-semibold">R$ 800,00</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-300">💰 Consultora de sono infantil</span>
+                    <span className="text-red-400 font-semibold">R$ 600,00</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-300">💰 Pediatra particular (consultas)</span>
+                    <span className="text-red-400 font-semibold">R$ 450,00</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-300">💰 Livros e cursos diversos</span>
+                    <span className="text-red-400 font-semibold">R$ 350,00</span>
+                  </div>
+                  <div className="border-t border-slate-700 pt-2 mt-3 flex justify-between items-center">
+                    <span className="text-slate-200 font-bold">TOTAL:</span>
+                    <span className="text-red-400 font-bold text-xl">R$ 2.200,00</span>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-base md:text-lg text-slate-300 mb-6 max-w-md">
+                <span className="text-red-400 font-bold">Você resolve TUDO isso</span> por menos de 10% do custo. Pagamento único. Sem mensalidades.
               </p>
 
               <div className="mb-8 flex flex-col items-center w-full">
-                <div className="flex items-center justify-center gap-3 mb-3">
-                  <span className="text-xl md:text-2xl text-slate-400 line-through">
-                    R$ 213,70
-                  </span>
-                </div>
                 <div className="flex items-baseline justify-center gap-2 mb-4">
+                  <span className="text-sm text-slate-400">apenas</span>
                   <span className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
                     R$ 197,90
                   </span>
                 </div>
                 <div className="inline-block bg-red-500/20 text-red-400 px-6 py-2 rounded-full font-semibold text-sm md:text-base border border-red-500/30">
-                  Economize R$ 15,80
+                  Economia de R$ 2.002,10
                 </div>
               </div>
 
