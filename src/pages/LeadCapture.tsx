@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import heroImage from "@/assets/hero-image.png";
 import bannerHero from "@/assets/banner-hero.png";
+import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
 
 const LeadCapture = () => {
   const [formData, setFormData] = useState({
@@ -47,7 +48,7 @@ const LeadCapture = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 opacity-20 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        style={{ backgroundImage: `url(${euOdeioSerMae})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-pink-950/80 to-slate-900/90" />
 
