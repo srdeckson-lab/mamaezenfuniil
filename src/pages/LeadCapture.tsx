@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
+import bannerEuOdeioSerMae from "@/assets/banner-eu-odeio-ser-mae.png";
 import seloGarantia from "@/assets/selo-garantia.png";
 import leadCaptureBg from "@/assets/lead-capture-bg.png";
 
@@ -69,9 +69,9 @@ const LeadCapture = () => {
               className="text-center mb-6"
             >
               <img 
-                src={euOdeioSerMae} 
-                alt="Eu Odeio Ser Mãe - Você não está sozinha" 
-                className="w-full max-w-md mx-auto h-auto rounded-lg shadow-2xl shadow-red-900/40"
+                src={bannerEuOdeioSerMae} 
+                alt="Eu Odeio Ser Mãe - O livro que nenhuma mãe admite, mas que precisam ler" 
+                className="w-full max-w-3xl mx-auto h-auto rounded-lg shadow-2xl shadow-red-900/40"
               />
             </motion.div>
 
