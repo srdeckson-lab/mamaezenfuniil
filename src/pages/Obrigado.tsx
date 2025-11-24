@@ -59,14 +59,14 @@ const Obrigado = () => {
             </p>
             <div className="flex justify-center gap-4">
               <a 
-                href="mailto:contato@mamaezen.com" 
+                href="mailto:mamaezen.vip@gmail.com" 
                 className="flex items-center gap-2 text-pink-200 hover:text-pink-100 transition-colors"
               >
                 <Mail className="w-5 h-5" />
                 <span className="text-sm">Email</span>
               </a>
               <a 
-                href="https://instagram.com/mamaezen" 
+                href="https://www.instagram.com/app_mamae_zen?igsh=bGlydG9udHp3aXhs" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-pink-200 hover:text-pink-100 transition-colors"
