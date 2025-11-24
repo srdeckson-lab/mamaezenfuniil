@@ -24,14 +24,63 @@
     <meta name="twitter:site" content="@Lovable" />
     <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/s8TwFIlx6RTwISPSHkVyvv8X7bJ3/social-images/social-1763967692776-1000160047.png">
 
-    <!-- Google Analytics - Adicione seu ID do Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17554379898"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
       gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
-    </script> -->
+
+      // ID do Google Ads
+      gtag('config', 'AW-17554379898');
+    </script>
+
+    <!-- Eventos Personalizados Global -->
+    <script>
+      // 🟦 Evento: Início do checkout
+      function beginCheckout() {
+        gtag('event', 'begin_checkout');
+      }
+
+      // 🟩 Evento: Compra aprovada (DEVE vir do webhook)
+      function purchaseApproved(valor, transacao) {
+        gtag('event', 'purchase', {
+          value: valor,
+          currency: 'BRL',
+          transaction_id: transacao
+        });
+      }
+
+      // 🟧 Evento: Visualizou o Upsell
+      function viewUpsell() {
+        gtag('event', 'view_upsell');
+      }
+
+      // 🟨 Evento: Aceitou o Upsell
+      function acceptUpsell() {
+        gtag('event', 'accept_upsell');
+      }
+
+      // 🟥 Evento: Recusou o Upsell
+      function rejectUpsell() {
+        gtag('event', 'reject_upsell');
+      }
+
+      // 🟪 Cadastro
+      function signupEvent() {
+        gtag('event', 'signup');
+      }
+
+      // 🟫 Login
+      function loginEvent() {
+        gtag('event', 'login');
+      }
+
+      // 🟦 Evento do PWA instalado
+      window.addEventListener('appinstalled', () => {
+        gtag('event', 'pwa_installed');
+      });
+    </script>
 
     <!-- Meta Pixel (Facebook) - Adicione seu Pixel ID -->
     <!-- <script>

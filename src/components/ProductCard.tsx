@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { trackProductView } from "@/lib/analytics";
 
 interface ProductCardProps {
   title: string;
@@ -11,13 +12,17 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ title, description, image, link, badge }: ProductCardProps) => {
+  const handleClick = () => {
+    trackProductView(title);
+  };
+
   return (
     <motion.div
       whileHover={{ scale: 1.05, y: -10 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
-      <Link to={link}>
+      <Link to={link} onClick={handleClick}>
         <Card className="overflow-hidden border-0 shadow-lg shadow-pink-500/10 hover:shadow-pink-500/30 transition-all duration-500 bg-gradient-to-br from-pink-800/90 to-pink-700/90 backdrop-blur group border border-pink-400/20">
           <div className="relative aspect-[3/4] overflow-hidden">
             <img 

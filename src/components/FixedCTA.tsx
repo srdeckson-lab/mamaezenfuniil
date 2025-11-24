@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sparkles, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { trackBeginCheckout } from "@/lib/analytics";
 
 const FixedCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,6 +31,7 @@ const FixedCTA = () => {
         <Link to="/combo-vitalicio" className="block">
           <Button 
             size="lg" 
+            onClick={trackBeginCheckout}
             className="w-full h-auto py-4 px-6 rounded-2xl shadow-2xl shadow-red-500/40 hover:shadow-red-500/60 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold text-base"
           >
             <Sparkles className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500 flex-shrink-0" />
