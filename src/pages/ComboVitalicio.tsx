@@ -156,16 +156,25 @@ const ComboVitalicio = () => {
               <a href="https://pay.kirvano.com/ffe6e704-5057-4d62-8658-909d09cbb054" target="_blank" rel="noopener noreferrer" className="block w-full">
                 <Button 
                   size="lg" 
-                  className="w-full max-w-md h-auto py-6 px-8 rounded-xl shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold mb-6 text-lg"
+                  className="w-full max-w-md h-auto py-6 px-8 rounded-xl shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold mb-4 text-lg"
                 >
                   Quero Tudo Agora
                 </Button>
               </a>
 
-              <div className="flex items-center justify-center gap-2 text-sm text-slate-400">
+              <div className="flex items-center justify-center gap-2 text-sm text-slate-400 mb-6">
                 <Star className="w-4 h-4 fill-red-500 text-red-500" />
                 <span>Pagamento único e seguro</span>
               </div>
+
+              <Link to="/produtos-individuais">
+                <Button 
+                  variant="ghost"
+                  className="text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 text-sm"
+                >
+                  Ver produtos separadamente
+                </Button>
+              </Link>
             </div>
           </Card>
         </div>
