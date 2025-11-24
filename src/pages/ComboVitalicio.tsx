@@ -79,9 +79,12 @@ const ComboVitalicio = () => {
 
         {/* Products Preview with Descriptions */}
         <div className="max-w-5xl mx-auto mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-red-100">
-            Tudo que você vai receber:
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-red-100">
+            Você Está Exausta. Frustrada. No Limite.
           </h2>
+          <p className="text-lg text-slate-300 text-center mb-8 max-w-3xl mx-auto">
+            Enquanto todo mundo romantiza a maternidade, você tá aqui sem dormir há semanas, com bebê chorando sem parar, se sentindo culpada por não estar feliz. <span className="text-red-400 font-semibold">Isso acaba HOJE.</span>
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {products.map((product, index) => (
               <Card key={index} className="relative overflow-hidden border-red-500/30 bg-slate-800/50 backdrop-blur group hover:border-red-500/50 transition-all duration-300">
@@ -153,13 +156,9 @@ const ComboVitalicio = () => {
               <a href="https://pay.kirvano.com/ffe6e704-5057-4d62-8658-909d09cbb054" target="_blank" rel="noopener noreferrer" className="block w-full">
                 <Button 
                   size="lg" 
-                  className="w-full max-w-md h-auto py-6 px-6 rounded-xl shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold mb-6"
+                  className="w-full max-w-md h-auto py-6 px-8 rounded-xl shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold mb-6 text-lg"
                 >
-                  <span className="flex items-center justify-center gap-2 w-full text-base sm:text-lg">
-                    <Sparkles className="w-5 h-5 flex-shrink-0 group-hover:rotate-180 transition-transform duration-500" />
-                    <span className="truncate">Quero Tudo Agora</span>
-                    <Crown className="w-5 h-5 flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
-                  </span>
+                  Quero Tudo Agora
                 </Button>
               </a>
 
