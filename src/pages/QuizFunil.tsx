@@ -39,6 +39,19 @@ const QuizFunil = () => {
     }
   }, []);
 
+  useEffect(() => {
+    // Adicionar áudio de fundo do YouTube quando a página carregar
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/ciH1K4e9dzQ?autoplay=1&loop=1&playlist=ciH1K4e9dzQ&controls=0&showinfo=0&mute=0&volume=30';
+    iframe.style.display = 'none';
+    iframe.allow = 'autoplay';
+    document.body.appendChild(iframe);
+
+    return () => {
+      document.body.removeChild(iframe);
+    };
+  }, []);
+
   const quizSteps = [
     {
       id: 0,
