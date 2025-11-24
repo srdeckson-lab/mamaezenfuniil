@@ -18,6 +18,7 @@ import transformacao from "@/assets/quiz-transformacao.jpg";
 import guiaMaeNinja from "@/assets/guia-mae-ninja.png";
 import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
 import sonsCalmantes from "@/assets/sons-calmantes.jpg";
+import seloGarantia from "@/assets/selo-garantia.png";
 
 const QuizFunil = () => {
   const [step, setStep] = useState(0);
@@ -257,15 +258,19 @@ const QuizFunil = () => {
                     </motion.div>
                   </div>
 
-                  {/* Urgency Box */}
-                  <div className="bg-red-900/40 border-2 border-red-400/50 rounded-xl p-6 mb-8 text-center">
-                    <p className="text-red-300 font-bold text-sm mb-2">⚠️ ATENÇÃO: OFERTA LIMITADA</p>
-                    <p className="text-white text-lg font-bold mb-3">
-                      Mais de 10.000 mães já transformaram suas vidas
-                    </p>
-                    <p className="text-pink-200 text-base">
-                      Você não precisa sofrer sozinha. A solução está aqui, testada e comprovada.
-                    </p>
+                  {/* Guarantee Badge */}
+                  <div className="flex justify-center items-center mb-8">
+                    <div className="flex flex-col md:flex-row items-center gap-6 bg-gradient-to-r from-pink-900/40 to-red-900/40 border-2 border-pink-400/30 rounded-xl p-6 max-w-2xl">
+                      <img src={seloGarantia} alt="Garantia 7 Dias" className="w-32 h-32 object-contain" />
+                      <div className="text-center md:text-left">
+                        <p className="text-pink-100 text-xl font-bold mb-2">
+                          Garantia Incondicional de 7 Dias
+                        </p>
+                        <p className="text-pink-200 text-base">
+                          Se você não transformar sua maternidade, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
                   {/* CTA Final */}
@@ -275,12 +280,12 @@ const QuizFunil = () => {
                         trackBeginCheckout();
                         navigate("/combo-vitalicio");
                       }}
-                      className="w-full max-w-2xl px-8 md:px-12 py-6 md:py-8 text-xl md:text-2xl font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white shadow-2xl hover:shadow-red-500/50 transition-all duration-300 animate-pulse"
+                      className="w-full max-w-2xl px-4 sm:px-8 md:px-12 py-6 md:py-8 text-base sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white shadow-2xl hover:shadow-red-500/50 transition-all duration-300 animate-pulse break-words"
                       size="lg"
                     >
-                      🔥 SIM! QUERO ACABAR COM MEU SOFRIMENTO AGORA
+                      🔥 Descubra o que preparei para você
                     </Button>
-                    <p className="text-pink-200 mt-4 text-base md:text-lg">
+                    <p className="text-pink-200 mt-4 text-sm sm:text-base md:text-lg px-4">
                       Acesso vitalício • Pague 1x, use para sempre • Garantia de 7 dias
                     </p>
                   </div>
