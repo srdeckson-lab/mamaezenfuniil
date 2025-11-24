@@ -140,7 +140,7 @@ const ComboVitalicio = () => {
               <div className="mb-8 flex flex-col items-center w-full">
                 <div className="flex items-center justify-center gap-3 mb-3">
                   <span className="text-xl md:text-2xl text-slate-400 line-through">
-                    R$ 297,90
+                    R$ 213,70
                   </span>
                 </div>
                 <div className="flex items-baseline justify-center gap-2 mb-4">
@@ -149,7 +149,7 @@ const ComboVitalicio = () => {
                   </span>
                 </div>
                 <div className="inline-block bg-red-500/20 text-red-400 px-6 py-2 rounded-full font-semibold text-sm md:text-base border border-red-500/30">
-                  Economize R$ 100,00
+                  Economize R$ 15,80
                 </div>
               </div>
 
