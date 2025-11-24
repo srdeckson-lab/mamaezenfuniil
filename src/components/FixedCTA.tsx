@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sparkles, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { trackBeginCheckout } from "@/lib/analytics";
 
 const FixedCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -15,6 +16,11 @@ const FixedCTA = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Não mostrar o CTA na página inicial (quiz) ou na página do combo
+  if (location.pathname === "/" || location.pathname === "/combo-vitalicio") {
+    return null;
+  }
 
   if (isDismissed || !isVisible) return null;
 
