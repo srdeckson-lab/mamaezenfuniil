@@ -160,19 +160,19 @@ const Home = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link to="/quiz" className="w-full sm:w-auto">
+                <Link to="/captura" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full text-lg px-8 py-6 rounded-full shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 transition-all duration-300 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 border-0 group text-white font-bold whitespace-nowrap">
                     ✨ Descubra Sua Solução Personalizada
                   </Button>
                 </Link>
-                <Link to="/combo-vitalicio" className="w-full sm:w-auto">
+                <Link to="/captura" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full text-lg px-8 py-6 rounded-full shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold whitespace-nowrap">
                     Quero Parar de Sofrer
                   </Button>
                 </Link>
               </div>
               <p className="text-pink-200 text-sm mt-4 text-center">
-                👆 Faça o quiz de 2 minutos e descubra o que você realmente precisa
+                👆 Preencha seus dados e faça o quiz personalizado
               </p>
             </div>
           </div>
@@ -285,7 +285,7 @@ const Home = () => {
                 Economize R$ 100,00 - Pague 1x, Use pra Sempre
               </span>
             </div>
-            <Link to="/combo-vitalicio" className="w-full sm:w-auto flex justify-center">
+            <Link to="/captura" className="w-full sm:w-auto flex justify-center">
               <Button size="lg" className="w-full sm:w-auto text-xl px-12 py-7 rounded-full shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold">
                 Quero Tudo Agora
               </Button>

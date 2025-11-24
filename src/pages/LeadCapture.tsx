@@ -47,8 +47,8 @@ const LeadCapture = () => {
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-pink-950 to-slate-900 relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 opacity-20 bg-cover bg-center"
-        style={{ backgroundImage: `url(${euOdeioSerMae})` }}
+        className="absolute inset-0 opacity-30 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroImage})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-pink-950/80 to-slate-900/90" />
 
