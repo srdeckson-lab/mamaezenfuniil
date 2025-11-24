@@ -53,7 +53,7 @@ const ComboVitalicio = () => {
       {/* Header */}
       <header className="border-b border-red-500/30 bg-slate-950/50 backdrop-blur-lg sticky top-[52px] z-40">
         <div className="container mx-auto px-4 py-4">
-          <Link to="/">
+          <Link to="/produtos-individuais">
             <Button variant="ghost" className="hover:bg-red-500/10 text-slate-100">
               ← Voltar
             </Button>
@@ -167,12 +167,12 @@ const ComboVitalicio = () => {
                 <span>Pagamento único e seguro</span>
               </div>
 
-              <Link to="/produtos-individuais">
+              <Link to="/obrigado">
                 <Button 
                   variant="ghost"
                   className="text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 text-sm"
                 >
-                  Ver produtos separadamente
+                  Não quero essa oferta
                 </Button>
               </Link>
             </div>
