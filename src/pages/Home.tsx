@@ -8,6 +8,7 @@ import sonsCalmantes from "@/assets/sons-calmantes.jpg";
 import cinemaMamae from "@/assets/cinema-mamae.jpg";
 import FixedCTA from "@/components/FixedCTA";
 import bannerHero from "@/assets/banner-hero.png";
+import maeExausta from "@/assets/mae-exausta.png";
 
 const Home = () => {
   const products = [
@@ -71,6 +72,16 @@ const Home = () => {
                   <span className="font-bold text-red-400">89% das mães</span> sentem que odeiam ser mãe em algum momento. Mas ninguém fala disso. Ninguém te prepara. <span className="text-white font-semibold">Até agora.</span>
                 </p>
               </div>
+              
+              {/* Imagem de impacto emocional */}
+              <div className="mb-8 max-w-2xl mx-auto">
+                <img 
+                  src={maeExausta} 
+                  alt="Mãe exausta e esgotada emocionalmente"
+                  className="w-full h-auto rounded-2xl shadow-2xl shadow-red-500/20"
+                />
+              </div>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link to="/combo-vitalicio" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full text-lg px-8 py-6 rounded-full shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold whitespace-nowrap">
