@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useNavigate } from "react-router-dom";
 import { trackProductView, trackBeginCheckout } from "@/lib/analytics";
+import { useAudio } from "@/contexts/AudioContext";
 import maeChorandoBanheiro from "@/assets/quiz-mae-chorando-banheiro.jpg";
 import bebeChorando from "@/assets/quiz-bebe-chorando.jpg";
 import mae3am from "@/assets/quiz-mae-3am.jpg";
@@ -30,6 +31,7 @@ const QuizFunil = () => {
   const [answers, setAnswers] = useState<string[]>([]);
   const [userName, setUserName] = useState("");
   const navigate = useNavigate();
+  const { startAudio } = useAudio();
 
   useEffect(() => {
     // Pegar nome do localStorage
@@ -38,20 +40,10 @@ const QuizFunil = () => {
       const data = JSON.parse(leadData);
       setUserName(data.name || "");
     }
-  }, []);
-
-  useEffect(() => {
-    // Adicionar áudio de fundo do YouTube quando a página carregar
-    const iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube.com/embed/ciH1K4e9dzQ?autoplay=1&loop=1&playlist=ciH1K4e9dzQ&controls=0&showinfo=0&mute=0&volume=30';
-    iframe.style.display = 'none';
-    iframe.allow = 'autoplay';
-    document.body.appendChild(iframe);
-
-    return () => {
-      document.body.removeChild(iframe);
-    };
-  }, []);
+    
+    // Iniciar áudio quando entrar no quiz
+    startAudio();
+  }, [startAudio]);
 
   const quizSteps = [
     {

@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AudioProvider } from "./contexts/AudioContext";
 import LeadCapture from "./pages/LeadCapture";
 import QuizFunil from "./pages/QuizFunil";
 import QuizFinal from "./pages/QuizFinal";
@@ -26,7 +27,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
+        <AudioProvider>
+          <Routes>
           <Route path="/" element={<LeadCapture />} />
           <Route path="/quiz" element={<QuizFunil />} />
           <Route path="/quiz-final" element={<QuizFinal />} />
@@ -42,7 +44,8 @@ const App = () => (
           <Route path="/install" element={<Install />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-        </Routes>
+          </Routes>
+        </AudioProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
