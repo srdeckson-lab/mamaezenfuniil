@@ -45,7 +45,7 @@ const Home = () => {
       <FixedCTA />
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="w-full">
+        <div className="sticky top-0 z-50 w-full">
           <img 
             src={bannerHero} 
             alt="Eu Odeio Ser Mãe - O livro que nenhuma mãe admite, mas que precisam ler"
