@@ -9,6 +9,7 @@ import GuiaMaeNinja from "./pages/produto/GuiaMaeNinja";
 import EuOdeioSerMae from "./pages/produto/EuOdeioSerMae";
 import SonsCalmantes from "./pages/produto/SonsCalmantes";
 import CinemaMamae from "./pages/produto/CinemaMamae";
+import Install from "./pages/Install";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/produto/eu-odeio-ser-mae" element={<EuOdeioSerMae />} />
           <Route path="/produto/sons-calmantes" element={<SonsCalmantes />} />
           <Route path="/produto/cinema-mamae" element={<CinemaMamae />} />
+          <Route path="/install" element={<Install />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
