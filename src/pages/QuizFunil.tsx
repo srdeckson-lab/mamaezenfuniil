@@ -278,7 +278,7 @@ const QuizFunil = () => {
                     <Button
                       onClick={() => {
                         trackBeginCheckout();
-                        navigate("/combo-vitalicio");
+                        navigate("/produtos-individuais");
                       }}
                       className="w-full max-w-2xl px-4 sm:px-8 md:px-12 py-6 md:py-8 text-base sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white shadow-2xl hover:shadow-red-500/50 transition-all duration-300 animate-pulse break-words"
                       size="lg"

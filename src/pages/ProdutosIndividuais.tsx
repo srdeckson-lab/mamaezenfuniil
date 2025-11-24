@@ -194,11 +194,24 @@ const ProdutosIndividuais = () => {
           </Card>
         </div>
 
-        {/* Última Chance */}
-        <div className="text-center mt-12 max-w-2xl mx-auto">
-          <p className="text-pink-300 text-sm mb-4">
-            Ou você pode continuar lutando sozinha...
-          </p>
+        {/* Última Chance - Upsell para Combo */}
+        <div className="text-center mt-12 max-w-2xl mx-auto space-y-4">
+          <div className="bg-gradient-to-r from-pink-900/40 to-red-900/40 border border-red-500/30 rounded-xl p-6">
+            <p className="text-pink-200 text-lg font-semibold mb-3">
+              🔥 Espera! Tenho algo MELHOR pra você...
+            </p>
+            <p className="text-pink-300 text-base mb-4">
+              Que tal ter TUDO isso + muito mais por um preço especial?
+            </p>
+            <Button
+              onClick={() => navigate("/combo-vitalicio")}
+              className="w-full max-w-md py-6 text-lg font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white shadow-lg hover:shadow-red-500/50 transition-all duration-300"
+            >
+              Ver Oferta Especial
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
+          
           <Button
             onClick={() => navigate("/obrigado")}
             variant="ghost"
