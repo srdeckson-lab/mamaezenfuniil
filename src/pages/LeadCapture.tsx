@@ -5,9 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import bannerHero from "@/assets/banner-hero.png";
 import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
 import seloGarantia from "@/assets/selo-garantia.png";
+import leadCaptureBg from "@/assets/lead-capture-bg.png";
 
 const LeadCapture = () => {
   const [formData, setFormData] = useState({
@@ -47,10 +47,10 @@ const LeadCapture = () => {
     <div className="min-h-screen bg-gradient-to-b from-black via-slate-950 to-black relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 opacity-15 bg-cover bg-center"
-        style={{ backgroundImage: `url(${euOdeioSerMae})` }}
+        className="absolute inset-0 opacity-20 bg-cover bg-center"
+        style={{ backgroundImage: `url(${leadCaptureBg})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-slate-950/85 to-black/95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-slate-950/80 to-black/90" />
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 py-8">
@@ -61,7 +61,7 @@ const LeadCapture = () => {
           className="w-full max-w-2xl"
         >
           <Card className="overflow-hidden border border-red-900/30 shadow-2xl shadow-red-900/60 bg-gradient-to-br from-black/95 to-slate-950/95 backdrop-blur-xl p-6 md:p-10">
-            {/* Headline */}
+            {/* Imagem do Livro */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -69,9 +69,9 @@ const LeadCapture = () => {
               className="text-center mb-6"
             >
               <img 
-                src={bannerHero} 
-                alt="Você não está sozinha - 10.000+ mães já transformaram suas vidas" 
-                className="w-full h-auto rounded-lg shadow-xl shadow-pink-500/20"
+                src={euOdeioSerMae} 
+                alt="Eu Odeio Ser Mãe - Você não está sozinha" 
+                className="w-full max-w-md mx-auto h-auto rounded-lg shadow-2xl shadow-red-900/40"
               />
             </motion.div>
 
