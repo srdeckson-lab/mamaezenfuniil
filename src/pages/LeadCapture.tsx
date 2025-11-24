@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import heroImage from "@/assets/hero-image.png";
+import bannerHero from "@/assets/banner-hero.png";
 
 const LeadCapture = () => {
   const [formData, setFormData] = useState({
@@ -66,15 +67,11 @@ const LeadCapture = () => {
               transition={{ delay: 0.2 }}
               className="text-center mb-8"
             >
-              <h1 className="text-3xl md:text-4xl font-bold text-pink-100 mb-4 leading-tight">
-                Você Não Está Sozinha
-              </h1>
-              <p className="text-lg md:text-xl text-pink-200 mb-2">
-                10.000+ mães já transformaram suas vidas
-              </p>
-              <p className="text-base text-pink-300">
-                Descubra em 2 minutos qual solução é perfeita para você
-              </p>
+              <img 
+                src={bannerHero} 
+                alt="Você não está sozinha - 10.000+ mães já transformaram suas vidas" 
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
             </motion.div>
 
             {/* Form */}
