@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useNavigate } from "react-router-dom";
 import { trackProductView, trackBeginCheckout } from "@/lib/analytics";
+import maeChorandoBanheiro from "@/assets/quiz-mae-chorando-banheiro.jpg";
 import bebeChorando from "@/assets/quiz-bebe-chorando.jpg";
 import mae3am from "@/assets/quiz-mae-3am.jpg";
 import perdaIdentidade from "@/assets/quiz-perda-identidade.jpg";
@@ -15,6 +16,9 @@ import culpa from "@/assets/quiz-culpa.jpg";
 import ninguemEntende from "@/assets/quiz-ninguem-entende.jpg";
 import multitaskImpossivel from "@/assets/quiz-multitask-impossivel.jpg";
 import transformacao from "@/assets/quiz-transformacao.jpg";
+import solucaoPaz from "@/assets/quiz-solucao-paz.jpg";
+import casaBaguncada from "@/assets/quiz-casa-baguncada.jpg";
+import maeQuartoNoite from "@/assets/quiz-mae-quarto-noite.jpg";
 import guiaMaeNinja from "@/assets/guia-mae-ninja.png";
 import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
 import sonsCalmantes from "@/assets/sons-calmantes.jpg";
@@ -23,104 +27,123 @@ import seloGarantia from "@/assets/selo-garantia.png";
 const QuizFunil = () => {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
+  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Pegar nome do localStorage
+    const leadData = localStorage.getItem("leadData");
+    if (leadData) {
+      const data = JSON.parse(leadData);
+      setUserName(data.name || "");
+    }
+  }, []);
 
   const quizSteps = [
     {
       id: 0,
-      image: bebeChorando,
-      question: "Seu bebê chora sem parar e você já tentou TUDO. O que você sente?",
+      image: maeChorandoBanheiro,
+      question: `${userName}, você já chorou sozinha no banheiro às 3h da manhã?`,
+      subtitle: "Sentindo que ninguém entende o que você está passando?",
       options: [
-        { text: "Desespero total. Não sei mais o que fazer.", value: "desespero" },
-        { text: "Culpa. Sinto que sou uma péssima mãe.", value: "culpa" },
-        { text: "Raiva. Quero gritar mas me seguro.", value: "raiva" }
+        { text: "Sim, várias vezes...", value: "sim_sempre" },
+        { text: "Sim, algumas vezes", value: "sim_as_vezes" },
+        { text: "Ainda não, mas tenho medo", value: "nao_ainda" }
       ]
     },
     {
       id: 1,
-      image: mae3am,
-      question: "São 3h da manhã. Você está acordada de novo enquanto todo mundo dorme. Como você se sente?",
+      image: bebeChorando,
+      question: `${userName}, seu bebê chora SEM PARAR e você já tentou de TUDO?`,
+      subtitle: "A sensação de impotência é desesperadora, não é?",
       options: [
-        { text: "Completamente exausta. Não aguento mais.", value: "exausta" },
-        { text: "Sozinha. Ninguém entende o que eu passo.", value: "sozinha" },
-        { text: "Com raiva de estar sempre cansada.", value: "cansada" }
+        { text: "Sim, me sinto desesperada", value: "sim_desesperada" },
+        { text: "Sim, estou exausta", value: "sim_cansada" },
+        { text: "Às vezes acontece", value: "as_vezes" }
       ]
     },
     {
       id: 2,
-      image: perdaIdentidade,
-      question: "Você se olha no espelho e não reconhece mais quem você é. Isso te assusta?",
+      image: solucaoPaz,
+      question: `E se você tivesse 7 TÉCNICAS CIENTÍFICAS que realmente funcionam?`,
+      subtitle: "O Guia da Mãe Ninja ensina: Charutinho Seguro, Ruído Branco, Ambiente Santuário e mais 4 técnicas que acalmam bebês em minutos.",
       options: [
-        { text: "Muito. Perdi completamente minha identidade.", value: "perdida" },
-        { text: "Sim. Sinto que virei apenas 'a mãe'.", value: "apenas-mae" },
-        { text: "Às vezes. Mas finjo que está tudo bem.", value: "fingindo" }
+        { text: "PRECISO DISSO AGORA!", value: "preciso_urgente" },
+        { text: "Quero conhecer essas técnicas", value: "quero_conhecer" },
+        { text: "Estou interessada", value: "interessada" }
       ]
     },
     {
       id: 3,
-      image: solidao,
-      question: "Você se sente sozinha mesmo rodeada de gente?",
+      image: insonia,
+      question: `${userName}, você dorme menos de 4 horas por noite?`,
+      subtitle: "A privação de sono está destruindo sua saúde mental?",
       options: [
-        { text: "Sempre. Ninguém realmente me entende.", value: "sempre-sozinha" },
-        { text: "Sim. Meu parceiro não ajuda como deveria.", value: "sem-ajuda" },
-        { text: "Muito. Sinto que ninguém se importa.", value: "invisivel" }
+        { text: "Durmo menos de 4h", value: "durmo_menos" },
+        { text: "Meu sono é todo fragmentado", value: "sono_fragmentado" },
+        { text: "Mal consigo dormir", value: "mal_durmo" }
       ]
     },
     {
       id: 4,
-      image: cozinhaCaos,
-      question: "A casa está um caos. Louça suja, roupa por lavar. Como você lida?",
+      image: maeQuartoNoite,
+      question: `Imagina ter um APP DO SONO com sons que acalmam você E o bebê?`,
+      subtitle: "50+ áudios premium: Ruído Branco Profissional, Batidas Cardíacas, Sons da Natureza. MAIS: Botão de Emergência que localiza hospitais mais próximos com rota segura + Lista de Medicamentos autorizados na gravidez e pós-parto.",
       options: [
-        { text: "Entro em pânico. Não consigo dar conta.", value: "panico" },
-        { text: "Choro escondida. É demais pra mim.", value: "choro-escondida" },
-        { text: "Finjo que não importa mas me destrói.", value: "destruida" }
+        { text: "Seria PERFEITO pra mim!", value: "seria_perfeito" },
+        { text: "Preciso muito disso", value: "preciso_disso" },
+        { text: "Me ajudaria demais", value: "me_ajudaria" }
       ]
     },
     {
       id: 5,
-      image: insonia,
-      question: "Você finalmente conseguiu deitar. Mas não consegue dormir. Por quê?",
+      image: culpa,
+      question: `${userName}, você se sente culpada por não ser a "mãe perfeita"?`,
+      subtitle: "Aquela culpa que aperta o peito e não te deixa em paz?",
       options: [
-        { text: "A mente não para. Mil preocupações.", value: "mente-acelerada" },
-        { text: "Medo de algo acontecer com o bebê.", value: "medo" },
-        { text: "Exaustão extrema mas o corpo não relaxa.", value: "corpo-tenso" }
+        { text: "O tempo todo...", value: "sempre" },
+        { text: "Frequentemente", value: "frequente" },
+        { text: "Às vezes sinto", value: "as_vezes" }
       ]
     },
     {
       id: 6,
-      image: culpa,
-      question: "A culpa materna te consome. Sobre o que você mais sente culpa?",
+      image: ninguemEntende,
+      question: `E se você descobrisse que 89% das mães sentem EXATAMENTE o mesmo?`,
+      subtitle: 'O ebook "EU ODEIO SER MÃE" revela: As 7 Frases Que Salvam + Os 5 Dias Que Toda Mãe Odeia. Zero julgamento. 100% real. Você NÃO é louca.',
       options: [
-        { text: "Por não estar aproveitando a maternidade.", value: "nao-aproveitando" },
-        { text: "Por pensar em fugir, em desistir.", value: "pensar-fugir" },
-        { text: "Por não ser a mãe perfeita.", value: "nao-perfeita" }
+        { text: "Me sentiria MUITO aliviada!", value: "aliviada" },
+        { text: "PRECISO ler isso", value: "preciso_ler" },
+        { text: "Me identifico totalmente", value: "identifico" }
       ]
     },
     {
       id: 7,
-      image: ninguemEntende,
-      question: "Você vê outras mães felizes nas redes sociais. O que passa pela sua cabeça?",
+      image: casaBaguncada,
+      question: `${userName}, você se sente sobrecarregada tentando dar conta de TUDO?`,
+      subtitle: "Casa, bebê, trabalho, relacionamento... parece que você vai explodir?",
       options: [
-        { text: "'Por que só eu sofro? O que há de errado comigo?'", value: "errado-comigo" },
-        { text: "'Elas estão mentindo. Ninguém é feliz assim.'", value: "mentira" },
-        { text: "Nem olho mais. Dói demais comparar.", value: "dor-comparar" }
+        { text: "Totalmente sobrecarregada", value: "sim_sobrecarregada" },
+        { text: "Estou no meu limite", value: "no_limite" },
+        { text: "Muito cansada", value: "cansada" }
       ]
     },
     {
       id: 8,
-      image: multitaskImpossivel,
-      question: "Você tenta trabalhar enquanto cuida do bebê. O resultado?",
+      image: perdaIdentidade,
+      question: `${userName}, você olha no espelho e não se reconhece mais?`,
+      subtitle: "Sente que perdeu quem você era antes de ser mãe?",
       options: [
-        { text: "Não consigo fazer nada direito.", value: "nada-direito" },
-        { text: "Surto de estresse. É impossível.", value: "surto" },
-        { text: "Me sinto falhando em tudo.", value: "falhando" }
+        { text: "Sim, me sinto perdida", value: "sim_perdida" },
+        { text: "Me sinto confusa", value: "confusa" },
+        { text: "Estou em transição difícil", value: "em_transicao" }
       ]
     },
     {
       id: 9,
       image: transformacao,
-      question: "E se existisse uma forma comprovada de transformar tudo isso?",
-      description: "10.000+ mães que estavam exatamente onde você está agora já encontraram a solução...",
+      question: `Imagina ter paz de volta: bebê dormindo, você descansando, zero culpa?`,
+      description: `${userName}, essa transformação é REAL. 10.000+ mães já conseguiram. Agora é sua vez.`,
       isResult: true
     }
   ];
@@ -171,9 +194,14 @@ const QuizFunil = () => {
 
                 {/* Question */}
                 <div className="p-6 md:p-12">
-                  <h2 className="text-xl md:text-3xl font-bold text-pink-100 mb-8 text-center leading-tight">
+                  <h2 className="text-xl md:text-3xl font-bold text-white mb-4 text-center leading-tight">
                     {currentStep.question}
                   </h2>
+                  {currentStep.subtitle && (
+                    <p className="text-pink-200 text-base md:text-lg mb-8 text-center leading-relaxed">
+                      {currentStep.subtitle}
+                    </p>
+                  )}
 
                   {/* Options */}
                   <div className="space-y-4 flex flex-col items-center">
@@ -278,12 +306,12 @@ const QuizFunil = () => {
                     <Button
                       onClick={() => {
                         trackBeginCheckout();
-                        navigate("/produtos-individuais");
+                        navigate("/combo-vitalicio");
                       }}
                       className="w-full max-w-2xl px-4 sm:px-8 md:px-12 py-6 md:py-8 text-base sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white shadow-2xl hover:shadow-red-500/50 transition-all duration-300 animate-pulse break-words"
                       size="lg"
                     >
-                      🔥 Descubra o que preparei para você
+                      🔥 Quero a Solução Completa Agora
                     </Button>
                     <p className="text-pink-200 mt-4 text-sm sm:text-base md:text-lg px-4">
                       Acesso vitalício • Pague 1x, use para sempre • Garantia de 7 dias
