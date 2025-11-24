@@ -9,6 +9,7 @@ import GuiaMaeNinja from "./pages/produto/GuiaMaeNinja";
 import EuOdeioSerMae from "./pages/produto/EuOdeioSerMae";
 import SonsCalmantes from "./pages/produto/SonsCalmantes";
 import CinemaMamae from "./pages/produto/CinemaMamae";
+import QuizFunil from "./pages/QuizFunil";
 import Install from "./pages/Install";
 import NotFound from "./pages/NotFound";
 
@@ -22,6 +23,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/quiz" element={<QuizFunil />} />
           <Route path="/combo-vitalicio" element={<ComboVitalicio />} />
           <Route path="/produto/guia-mae-ninja" element={<GuiaMaeNinja />} />
           <Route path="/produto/eu-odeio-ser-mae" element={<EuOdeioSerMae />} />
