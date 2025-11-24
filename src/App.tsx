@@ -3,13 +3,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import QuizFunil from "./pages/QuizFunil";
 import Home from "./pages/Home";
 import ComboVitalicio from "./pages/ComboVitalicio";
 import GuiaMaeNinja from "./pages/produto/GuiaMaeNinja";
 import EuOdeioSerMae from "./pages/produto/EuOdeioSerMae";
 import SonsCalmantes from "./pages/produto/SonsCalmantes";
 import CinemaMamae from "./pages/produto/CinemaMamae";
-import QuizFunil from "./pages/QuizFunil";
 import Install from "./pages/Install";
 import NotFound from "./pages/NotFound";
 
@@ -22,8 +22,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/quiz" element={<QuizFunil />} />
+          <Route path="/" element={<QuizFunil />} />
+          <Route path="/produtos" element={<Home />} />
           <Route path="/combo-vitalicio" element={<ComboVitalicio />} />
           <Route path="/produto/guia-mae-ninja" element={<GuiaMaeNinja />} />
           <Route path="/produto/eu-odeio-ser-mae" element={<EuOdeioSerMae />} />
