@@ -47,10 +47,10 @@ const LeadCapture = () => {
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-pink-950 to-slate-900 relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 opacity-30 bg-cover bg-center"
+        className="absolute inset-0 opacity-20 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-pink-950/80 to-slate-900/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-pink-950/85 to-slate-900/95" />
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 py-12">
@@ -60,7 +60,7 @@ const LeadCapture = () => {
           transition={{ duration: 0.6 }}
           className="w-full max-w-lg"
         >
-          <Card className="overflow-hidden border-0 shadow-2xl shadow-pink-500/30 bg-gradient-to-br from-slate-800/95 to-pink-900/95 backdrop-blur-lg p-8 md:p-12">
+          <Card className="overflow-hidden border-0 shadow-2xl shadow-pink-500/40 bg-gradient-to-br from-slate-800/98 to-pink-900/98 backdrop-blur-xl p-8 md:p-12">
             {/* Headline */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -71,7 +71,7 @@ const LeadCapture = () => {
               <img 
                 src={bannerHero} 
                 alt="Você não está sozinha - 10.000+ mães já transformaram suas vidas" 
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-lg shadow-xl shadow-pink-500/20"
               />
             </motion.div>
 
@@ -132,7 +132,7 @@ const LeadCapture = () => {
               >
                 <Button
                   type="submit"
-                  className="w-full h-14 text-lg md:text-xl font-bold bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-500 hover:to-pink-600 text-white shadow-xl hover:shadow-pink-500/50 transition-all duration-300"
+                  className="w-full h-14 text-lg md:text-xl font-bold bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-500 hover:to-pink-600 text-white shadow-2xl shadow-pink-500/30 hover:shadow-pink-500/60 hover:scale-[1.02] transition-all duration-300"
                 >
                   Descobrir Agora →
                 </Button>
