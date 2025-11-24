@@ -79,6 +79,11 @@
         gtag('event', 'login');
       }
 
+      // 💚 Mudou de ideia (volta da página de recusa)
+      function changeOfMind() {
+        gtag('event', 'change_of_mind');
+      }
+
       // 🟦 Evento do PWA instalado
       window.addEventListener('appinstalled', () => {
         gtag('event', 'pwa_installed');
@@ -102,12 +107,12 @@
       src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
     /></noscript> -->
 
-    <!-- Google Tag Manager - Adicione seu GTM ID -->
-    <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXX');</script> -->
+    })(window,document,'script','dataLayer','GT-W62H5834');</script>
     <meta property="og:title" content="MAMAEZEN - Área Premium para Mães">
   <meta name="twitter:title" content="MAMAEZEN - Área Premium para Mães">
   <meta property="og:description" content="Área de membros premium MAMAEZEN com recursos exclusivos para mães: guias, sons calmantes, livros e streaming. Tudo para sua tranquilidade.">
@@ -115,6 +120,11 @@
 </head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-W62H5834"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

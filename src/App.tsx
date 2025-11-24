@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import ComboVitalicio from "./pages/ComboVitalicio";
 import ProdutosIndividuais from "./pages/ProdutosIndividuais";
 import Obrigado from "./pages/Obrigado";
+import ObrigadoRecusa from "./pages/ObrigadoRecusa";
 import GuiaMaeNinja from "./pages/produto/GuiaMaeNinja";
 import EuOdeioSerMae from "./pages/produto/EuOdeioSerMae";
 import SonsCalmantes from "./pages/produto/SonsCalmantes";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/combo-vitalicio" element={<ComboVitalicio />} />
           <Route path="/produtos-individuais" element={<ProdutosIndividuais />} />
           <Route path="/obrigado" element={<Obrigado />} />
+          <Route path="/obrigado-recusa" element={<ObrigadoRecusa />} />
           <Route path="/produto/guia-mae-ninja" element={<GuiaMaeNinja />} />
           <Route path="/produto/eu-odeio-ser-mae" element={<EuOdeioSerMae />} />
           <Route path="/produto/sons-calmantes" element={<SonsCalmantes />} />
