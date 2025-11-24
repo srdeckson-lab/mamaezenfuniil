@@ -7,7 +7,7 @@ import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
 import sonsCalmantes from "@/assets/sons-calmantes.jpg";
 import cinemaMamae from "@/assets/cinema-mamae.jpg";
 import FixedCTA from "@/components/FixedCTA";
-import heroImage from "@/assets/hero-image.png";
+import bannerHero from "@/assets/banner-hero.png";
 
 const Home = () => {
   const products = [
@@ -44,38 +44,34 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <FixedCTA />
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-12 px-4">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-rose-500/10" />
-        <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-center">
-            {/* Hero Image */}
-            <div className="flex justify-center lg:justify-end order-2 lg:order-1">
+      <section className="relative overflow-hidden">
+        <div className="container mx-auto relative z-10 px-4 py-8">
+          <div className="max-w-7xl mx-auto">
+            {/* Banner Image */}
+            <div className="w-full mb-8">
               <img 
-                src={heroImage} 
-                alt="Maternidade Real SEM Filtro - MAMAEZEN"
-                className="w-full max-w-md rounded-3xl shadow-2xl shadow-red-500/30 border-2 border-red-500/30 transform hover:scale-105 transition-transform duration-500"
+                src={bannerHero} 
+                alt="Eu Odeio Ser Mãe - O livro que nenhuma mãe admite, mas que precisam ler"
+                className="w-full h-auto rounded-2xl shadow-2xl shadow-red-500/30"
               />
             </div>
             
             {/* Hero Content */}
-            <div className="text-center lg:text-left order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 bg-red-500/20 px-6 py-2 rounded-full mb-6 border border-red-500/30">
-                <span className="text-sm font-bold text-red-300">⚠️ AVISO: CONTEÚDO POLÊMICO</span>
-              </div>
+            <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
                 Você Odeia Ser Mãe?<br />
                 <span className="text-red-400">Você NÃO Está Sozinha.</span>
               </h1>
-              <p className="text-lg md:text-xl text-pink-100 mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl text-pink-100 mb-8 leading-relaxed max-w-4xl mx-auto">
                 3h da manhã. Bebê chorando. De novo. Você exausta. Se sentindo culpada por não estar feliz.<br />
                 <span className="text-white font-semibold">Enquanto o Instagram mostra maternidade perfeita, você tá no limite.</span>
               </p>
-              <div className="bg-pink-900/30 border border-pink-400/30 rounded-2xl p-6 mb-8">
+              <div className="bg-pink-900/30 border border-pink-400/30 rounded-2xl p-6 mb-8 max-w-4xl mx-auto">
                 <p className="text-pink-100 text-base leading-relaxed">
                   <span className="font-bold text-red-400">89% das mães</span> sentem que odeiam ser mãe em algum momento. Mas ninguém fala disso. Ninguém te prepara. <span className="text-white font-semibold">Até agora.</span>
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link to="/combo-vitalicio" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full text-lg px-8 py-6 rounded-full shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold whitespace-nowrap">
                     Quero Parar de Sofrer
