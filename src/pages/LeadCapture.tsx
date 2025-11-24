@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import heroImage from "@/assets/hero-image.png";
 import bannerHero from "@/assets/banner-hero.png";
 import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
 
@@ -45,12 +44,6 @@ const LeadCapture = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-pink-950 to-slate-900 relative overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 opacity-20 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-pink-950/85 to-slate-900/95" />
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 py-12">
