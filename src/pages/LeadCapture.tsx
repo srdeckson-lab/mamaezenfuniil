@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import bannerHero from "@/assets/banner-hero.png";
 import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
+import seloGarantia from "@/assets/selo-garantia.png";
 
 const LeadCapture = () => {
   const [formData, setFormData] = useState({
@@ -46,26 +47,26 @@ const LeadCapture = () => {
     <div className="min-h-screen bg-gradient-to-b from-black via-slate-950 to-black relative overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 opacity-10 bg-cover bg-center"
+        className="absolute inset-0 opacity-15 bg-cover bg-center"
         style={{ backgroundImage: `url(${euOdeioSerMae})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-slate-950/90 to-black/95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-slate-950/85 to-black/95" />
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center px-4 py-12">
+      <div className="relative z-10 min-h-screen flex items-center justify-center px-4 py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="w-full max-w-lg"
+          className="w-full max-w-2xl"
         >
-          <Card className="overflow-hidden border-0 shadow-2xl shadow-red-900/60 bg-gradient-to-br from-black/95 to-slate-950/95 backdrop-blur-xl p-8 md:p-12 border-red-900/30">
+          <Card className="overflow-hidden border border-red-900/30 shadow-2xl shadow-red-900/60 bg-gradient-to-br from-black/95 to-slate-950/95 backdrop-blur-xl p-6 md:p-10">
             {/* Headline */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-center mb-8"
+              className="text-center mb-6"
             >
               <img 
                 src={bannerHero} 
@@ -75,7 +76,7 @@ const LeadCapture = () => {
             </motion.div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -87,7 +88,7 @@ const LeadCapture = () => {
                   placeholder="Seu nome"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full h-12 px-4 bg-black/70 border-red-900/50 text-pink-50 placeholder:text-gray-400 focus:border-red-700 focus:ring-red-900/30"
+                  className="w-full h-14 px-4 text-base bg-black/80 border-red-900/50 text-white placeholder:text-gray-400 focus:border-red-600 focus:ring-red-900/30 rounded-lg"
                   required
                 />
               </motion.div>
@@ -103,7 +104,7 @@ const LeadCapture = () => {
                   placeholder="Seu melhor e-mail"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full h-12 px-4 bg-black/70 border-red-900/50 text-pink-50 placeholder:text-gray-400 focus:border-red-700 focus:ring-red-900/30"
+                  className="w-full h-14 px-4 text-base bg-black/80 border-red-900/50 text-white placeholder:text-gray-400 focus:border-red-600 focus:ring-red-900/30 rounded-lg"
                   required
                 />
               </motion.div>
@@ -119,7 +120,7 @@ const LeadCapture = () => {
                   placeholder="Seu WhatsApp (com DDD)"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full h-12 px-4 bg-black/70 border-red-900/50 text-pink-50 placeholder:text-gray-400 focus:border-red-700 focus:ring-red-900/30"
+                  className="w-full h-14 px-4 text-base bg-black/80 border-red-900/50 text-white placeholder:text-gray-400 focus:border-red-600 focus:ring-red-900/30 rounded-lg"
                   required
                 />
               </motion.div>
@@ -131,24 +132,38 @@ const LeadCapture = () => {
               >
                 <Button
                   type="submit"
-                  className="w-full h-14 text-lg md:text-xl font-bold bg-gradient-to-r from-red-700 to-red-900 hover:from-red-600 hover:to-red-800 text-white shadow-2xl shadow-red-900/50 hover:shadow-red-700/70 hover:scale-[1.02] transition-all duration-300"
+                  className="w-full h-16 text-xl font-bold bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 hover:scale-[1.02] transition-all duration-300 rounded-lg"
                 >
                   Descobrir Agora →
                 </Button>
               </motion.div>
             </form>
 
-            {/* Trust Elements */}
+            {/* Selo de Garantia */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="mt-6 text-center space-y-2"
+              className="mt-6 flex justify-center"
             >
-              <p className="text-pink-200 text-sm">
+              <img 
+                src={seloGarantia} 
+                alt="Garantia de 7 Dias" 
+                className="w-28 h-28 object-contain"
+              />
+            </motion.div>
+
+            {/* Trust Elements */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.75 }}
+              className="mt-4 text-center space-y-1"
+            >
+              <p className="text-gray-300 text-sm font-medium">
                 🔒 Seus dados estão 100% seguros
               </p>
-              <p className="text-pink-300 text-xs">
+              <p className="text-gray-400 text-xs">
                 Nunca enviaremos spam. Você pode sair a qualquer momento.
               </p>
             </motion.div>
@@ -159,10 +174,10 @@ const LeadCapture = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="mt-6 text-center"
+            className="mt-5 text-center"
           >
-            <p className="text-pink-200 text-sm">
-              ⭐⭐⭐⭐⭐ Avaliação média de <span className="font-bold">4.9/5</span> por mais de 10.000 mães
+            <p className="text-gray-300 text-base font-medium">
+              ⭐⭐⭐⭐⭐ <span className="font-bold">4.9/5</span> por mais de 10.000 mães
             </p>
           </motion.div>
         </motion.div>
