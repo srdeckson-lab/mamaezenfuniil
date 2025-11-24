@@ -114,7 +114,7 @@ const SonsCalmantes = () => {
               <div className="flex items-baseline gap-3 mb-4">
                 <span className="text-2xl text-muted-foreground line-through">R$ 89,00</span>
                 <span className="text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                  R$ 59,00
+                  R$ 49,90
                 </span>
               </div>
               <a href="https://pay.kirvano.com/ffe6e704-5057-4d62-8658-909d09cbb054" target="_blank" rel="noopener noreferrer" className="block">
