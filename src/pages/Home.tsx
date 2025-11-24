@@ -45,16 +45,16 @@ const Home = () => {
       <FixedCTA />
       {/* Hero Section */}
       <section className="relative overflow-hidden">
+        <div className="w-full">
+          <img 
+            src={bannerHero} 
+            alt="Eu Odeio Ser Mãe - O livro que nenhuma mãe admite, mas que precisam ler"
+            className="w-full h-auto"
+          />
+        </div>
+        
         <div className="container mx-auto relative z-10 px-4 py-8">
           <div className="max-w-7xl mx-auto">
-            {/* Banner Image */}
-            <div className="w-full mb-8">
-              <img 
-                src={bannerHero} 
-                alt="Eu Odeio Ser Mãe - O livro que nenhuma mãe admite, mas que precisam ler"
-                className="w-full h-auto rounded-2xl shadow-2xl shadow-red-500/30"
-              />
-            </div>
             
             {/* Hero Content */}
             <div className="text-center">
