@@ -9,6 +9,7 @@ import cinemaMamae from "@/assets/cinema-mamae.jpg";
 import FixedCTA from "@/components/FixedCTA";
 import bannerHero from "@/assets/banner-hero.png";
 import maeExausta from "@/assets/mae-exausta.png";
+import logoMamaezen from "@/assets/logo-mamaezen.png";
 
 const Home = () => {
   const products = [
@@ -44,9 +45,23 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <FixedCTA />
+      
+      {/* Header com Logo */}
+      <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-700/50">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-center">
+            <img 
+              src={logoMamaezen} 
+              alt="MAMAEZEN Logo"
+              className="h-16 w-auto"
+            />
+          </div>
+        </div>
+      </header>
+      
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="sticky top-0 z-50 w-full">
+        <div className="w-full">
           <img 
             src={bannerHero} 
             alt="Eu Odeio Ser Mãe - O livro que nenhuma mãe admite, mas que precisam ler"
