@@ -19,6 +19,7 @@ import transformacao from "@/assets/quiz-transformacao.jpg";
 import solucaoPaz from "@/assets/quiz-solucao-paz.jpg";
 import casaBaguncada from "@/assets/quiz-casa-baguncada.jpg";
 import maeQuartoNoite from "@/assets/quiz-mae-quarto-noite.jpg";
+import appSonoCerebro from "@/assets/app-sono-cerebro.png";
 import guiaMaeNinja from "@/assets/guia-mae-ninja.png";
 import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
 import sonsCalmantes from "@/assets/sons-calmantes.jpg";
@@ -99,7 +100,7 @@ const QuizFunil = () => {
     },
     {
       id: 4,
-      image: maeQuartoNoite,
+      image: appSonoCerebro,
       question: `Imagina ter um APP DO SONO com sons que acalmam você E o bebê?`,
       subtitle: "50+ áudios premium: Ruído Branco Profissional, Batidas Cardíacas, Sons da Natureza. MAIS: Botão de Emergência que localiza hospitais mais próximos com rota segura + Lista de Medicamentos autorizados na gravidez e pós-parto.",
       options: [
