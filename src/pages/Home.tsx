@@ -14,14 +14,14 @@ const Home = () => {
   const products = [
     {
       title: "Guia da Mãe Ninja 2.0",
-      description: "7 técnicas pra fazer bebê dormir em 2 minutos. Método testado por 10.000+ mães desesperadas que não dormiam há semanas.",
+      description: "O Charutinho + Ruído Branco + Rotina Real. As 7 técnicas que UTIs neonatais usam pra acalmar bebê. Testado por 10.000+ mães.",
       image: guiaMaeNinja,
       link: "/produto/guia-mae-ninja",
       badge: "FUNCIONA"
     },
     {
       title: "Eu Odeio Ser Mãe",
-      description: "127 páginas das verdades que ninguém te contou. Você NÃO é mãe desnaturada. 89% das mães sentem isso e escondem.",
+      description: "As 7 Frases Que Salvam quando você tá no limite. Você NÃO é louca. Você NÃO é má mãe. Só não sabia que ia doer assim.",
       image: euOdeioSerMae,
       link: "/produto/eu-odeio-ser-mae",
       badge: "POLÊMICO"
@@ -83,24 +83,37 @@ const Home = () => {
                 </p>
               </div>
               
-              <div className="bg-pink-900/30 border border-pink-400/30 rounded-2xl p-6 mb-8 max-w-4xl mx-auto">
-                <p className="text-pink-100 text-lg leading-relaxed mb-3">
-                  <span className="font-bold text-white">E se eu te dissesse</span> que existe uma forma de:
+              <div className="bg-slate-800/80 border-2 border-white/20 rounded-2xl p-8 mb-8 max-w-4xl mx-auto">
+                <p className="text-white text-2xl font-bold mb-6">
+                  O Que Você Vai Receber (e que VAI mudar tudo):
                 </p>
-                <ul className="text-left text-pink-100 space-y-2 max-w-2xl mx-auto">
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-400 font-bold">✓</span>
-                    <span>Fazer seu bebê dormir em <span className="text-white font-bold">20 minutos</span> (em vez de 3 horas de choro)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-400 font-bold">✓</span>
-                    <span>Parar de se sentir culpada por <span className="text-white font-bold">não estar feliz o tempo todo</span></span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-400 font-bold">✓</span>
-                    <span>Ter <span className="text-white font-bold">30 minutos de paz</span> sem se sentir uma mãe desnaturada</span>
-                  </li>
-                </ul>
+                
+                <div className="space-y-5 text-left">
+                  <div className="bg-red-900/30 rounded-xl p-5 border border-red-400/30">
+                    <p className="text-red-300 font-bold text-sm mb-2">🎯 BEBÊ DORMINDO EM 20 MIN:</p>
+                    <p className="text-pink-100 text-base">
+                      O Charutinho Seguro + Ambiente Santuário + Ruído Branco + Rotina Real.<br/>
+                      <span className="text-white font-semibold">Os mesmos truques que UTIs neonatais usam.</span>
+                    </p>
+                  </div>
+                  
+                  <div className="bg-red-900/30 rounded-xl p-5 border border-red-400/30">
+                    <p className="text-red-300 font-bold text-sm mb-2">💭 AS 7 FRASES QUE SALVAM:</p>
+                    <p className="text-pink-100 text-base">
+                      "Eu odeio ser mãe HOJE. Amanhã pode ser diferente."<br/>
+                      "Bebê não morre se chorar 5 minutos."<br/>
+                      <span className="text-white font-semibold">Permissão pra você respirar sem culpa.</span>
+                    </p>
+                  </div>
+                  
+                  <div className="bg-red-900/30 rounded-xl p-5 border border-red-400/30">
+                    <p className="text-red-300 font-bold text-sm mb-2">🎬 30 MIN DE PAZ SEM CULPA:</p>
+                    <p className="text-pink-100 text-base">
+                      Cinema sem anúncios + Sons calmantes profissionais.<br/>
+                      <span className="text-white font-semibold">Você merece sentar e respirar.</span>
+                    </p>
+                  </div>
+                </div>
               </div>
               
               {/* Imagem de impacto emocional */}
@@ -129,32 +142,37 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="flex items-center justify-center flex-col mb-12 text-center">
             <div className="bg-red-900/30 border border-red-500/40 rounded-2xl p-8 mb-8 max-w-4xl">
-              <p className="text-red-300 text-sm font-bold mb-3">⚠️ VOCÊ RECONHECE ISSO?</p>
+              <p className="text-red-300 text-sm font-bold mb-3">⚠️ SE VOCÊ JÁ SENTIU ISSO, LEIA:</p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                "Meu Bebê Não Para de Chorar.<br />
-                Eu Não Durmo Há Semanas.<br />
-                <span className="text-red-400">Eu Odeio Ser Mãe HOJE."</span>
+                O Dia Que Tu Chora No Banheiro.<br />
+                O Dia Que Tu Quer Gritar.<br />
+                <span className="text-red-400">O Dia Que Tu Pensa Em Fugir.</span>
               </h2>
               <p className="text-pink-100 text-base leading-relaxed mb-4">
-                Seus hormônios despencaram. Seu corpo tá destruído. Sua identidade morreu.<br />
-                <span className="text-white font-semibold">E todo mundo só sabe dizer: "Aproveita, passa rápido."</span>
+                É biológico. É físico. É existencial.<br />
+                Seus hormônios despencaram brutal depois do parto. Zero sono. Corpo em recuperação. Cérebro em modo sobrevivência.<br />
+                <span className="text-white font-semibold">Sua identidade antiga morreu pra dar lugar a uma nova. E DOI DEMAIS.</span>
               </p>
               <p className="text-red-200 text-lg font-bold">
-                Mas ninguém te dá a SOLUÇÃO de verdade.
+                Não é frescura. Não é falta de amor. É a porra da realidade.
+              </p>
+              <p className="text-pink-200 text-sm mt-3 italic">
+                E ninguém te deu as ferramentas certas pra sobreviver a isso.
               </p>
             </div>
             
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-              A Única Solução Que Funciona DE VERDADE
+              Aqui Tá a Solução (Testada e Aprovada)
             </h2>
             <p className="text-lg md:text-xl text-pink-200 max-w-3xl mb-4">
-              Testado por <span className="text-white font-bold">10.000+ mães desesperadas</span> que estavam exatamente como você.<br />
-              <span className="text-red-400 font-bold">Mães REAIS. Dores REAIS. Resultados REAIS.</span>
+              <span className="text-white font-bold">10.000+ mães</span> que estavam chorando no banheiro todo dia.<br />
+              Hoje? Bebê dormindo. Sanidade mental de volta.<br />
+              <span className="text-red-400 font-bold">Não é mágica. É ciência + paciência + as técnicas CERTAS.</span>
             </p>
             <div className="bg-pink-900/20 border border-pink-400/30 rounded-xl p-4 max-w-2xl">
               <p className="text-pink-100 text-sm">
-                <span className="text-white font-semibold">Chega de culpa.</span> Chega de fingir. Chega de noites em claro.<br />
-                <span className="text-red-300 italic">Isso aqui é pra mãe que tá no limite e precisa de ajuda AGORA.</span>
+                <span className="text-white font-semibold">Chega de tentar adivinhar o que fazer.</span><br />
+                <span className="text-red-300 italic">Você precisa das ferramentas AGORA. E elas tão aqui.</span>
               </p>
             </div>
           </div>
