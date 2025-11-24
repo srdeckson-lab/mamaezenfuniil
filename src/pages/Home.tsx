@@ -14,27 +14,27 @@ const Home = () => {
   const products = [
     {
       title: "Guia da Mãe Ninja 2.0",
-      description: "O Charutinho + Ruído Branco + Rotina Real. As 7 técnicas que UTIs neonatais usam pra acalmar bebê. Testado por 10.000+ mães.",
+      description: "7 técnicas científicas incluindo Charutinho Seguro, Ruído Branco Premium, Ambiente Santuário. Os mesmos métodos de UTIs neonatais.",
       image: guiaMaeNinja,
       link: "/produto/guia-mae-ninja",
       badge: "FUNCIONA"
     },
     {
       title: "Eu Odeio Ser Mãe",
-      description: "As 7 Frases Que Salvam quando você tá no limite. Você NÃO é louca. Você NÃO é má mãe. Só não sabia que ia doer assim.",
+      description: "As 7 Frases Que Salvam + Os 5 Dias Que Toda Mãe Odeia. Histórias reais. Técnicas de gerenciamento emocional. Você NÃO é louca.",
       image: euOdeioSerMae,
       link: "/produto/eu-odeio-ser-mae",
       badge: "POLÊMICO"
     },
     {
       title: "Sons Calmantes",
-      description: "15 sons profissionais que acalmam bebê em segundos. Os mesmos usados em UTIs neonatais pra parar choro.",
+      description: "50+ áudios em 4K. Ruído branco profissional, batimentos cardíacos, chuva. 12h de reprodução contínua. Download offline.",
       image: sonsCalmantes,
       link: "/produto/sons-calmantes",
     },
     {
       title: "Cinema da Mamãe",
-      description: "Streaming sem anúncios. Porque você merece 30 minutos de paz sem se sentir culpada.",
+      description: "Streaming HD/4K sem anúncios. Filmes, séries, documentários ilimitados. Download offline. 30 minutos de paz sem culpa.",
       image: cinemaMamae,
       link: "/produto/cinema-mamae",
       badge: "GRÁTIS"
@@ -83,36 +83,70 @@ const Home = () => {
                 </p>
               </div>
               
-              <div className="bg-slate-800/80 border-2 border-white/20 rounded-2xl p-8 mb-8 max-w-4xl mx-auto">
-                <p className="text-white text-2xl font-bold mb-6">
-                  O Que Você Vai Receber (e que VAI mudar tudo):
+              <div className="bg-slate-800/80 border-2 border-white/20 rounded-2xl p-8 mb-8 max-w-5xl mx-auto">
+                <p className="text-white text-2xl font-bold mb-6 text-center">
+                  Tudo Que Você Vai Receber Agora:
                 </p>
                 
-                <div className="space-y-5 text-left">
-                  <div className="bg-red-900/30 rounded-xl p-5 border border-red-400/30">
-                    <p className="text-red-300 font-bold text-sm mb-2">🎯 BEBÊ DORMINDO EM 20 MIN:</p>
-                    <p className="text-pink-100 text-base">
-                      O Charutinho Seguro + Ambiente Santuário + Ruído Branco + Rotina Real.<br/>
-                      <span className="text-white font-semibold">Os mesmos truques que UTIs neonatais usam.</span>
-                    </p>
+                <div className="grid md:grid-cols-2 gap-5 text-left">
+                  <div className="bg-red-900/40 rounded-xl p-6 border-2 border-red-400/40">
+                    <p className="text-red-300 font-bold text-base mb-3">GUIA DA MÃE NINJA 2.0</p>
+                    <ul className="text-pink-100 text-sm space-y-2 leading-relaxed">
+                      <li><span className="text-white font-semibold">→</span> 7 Técnicas Científicas Passo a Passo</li>
+                      <li><span className="text-white font-semibold">→</span> O Charutinho Seguro (Swaddle)</li>
+                      <li><span className="text-white font-semibold">→</span> Ambiente Santuário do Sono</li>
+                      <li><span className="text-white font-semibold">→</span> Ruído Branco Premium</li>
+                      <li><span className="text-white font-semibold">→</span> Rotina Real Que Funciona</li>
+                      <li><span className="text-white font-semibold">→</span> Bebês de 0 a 3 Anos</li>
+                      <li><span className="text-white font-semibold">→</span> Áudios de Apoio Inclusos</li>
+                    </ul>
                   </div>
                   
-                  <div className="bg-red-900/30 rounded-xl p-5 border border-red-400/30">
-                    <p className="text-red-300 font-bold text-sm mb-2">💭 AS 7 FRASES QUE SALVAM:</p>
-                    <p className="text-pink-100 text-base">
-                      "Eu odeio ser mãe HOJE. Amanhã pode ser diferente."<br/>
-                      "Bebê não morre se chorar 5 minutos."<br/>
-                      <span className="text-white font-semibold">Permissão pra você respirar sem culpa.</span>
-                    </p>
+                  <div className="bg-red-900/40 rounded-xl p-6 border-2 border-red-400/40">
+                    <p className="text-red-300 font-bold text-base mb-3">EU ODEIO SER MÃE</p>
+                    <ul className="text-pink-100 text-sm space-y-2 leading-relaxed">
+                      <li><span className="text-white font-semibold">→</span> As 7 Frases Que Salvam Vidas</li>
+                      <li><span className="text-white font-semibold">→</span> Os 5 Dias Que Toda Mãe Odeia</li>
+                      <li><span className="text-white font-semibold">→</span> Histórias Reais de Mães</li>
+                      <li><span className="text-white font-semibold">→</span> Técnicas de Gerenciamento Emocional</li>
+                      <li><span className="text-white font-semibold">→</span> Exercícios Práticos de Autocuidado</li>
+                      <li><span className="text-white font-semibold">→</span> Zero Julgamento, 100% Real</li>
+                      <li><span className="text-white font-semibold">→</span> Você NÃO é Louca</li>
+                    </ul>
                   </div>
                   
-                  <div className="bg-red-900/30 rounded-xl p-5 border border-red-400/30">
-                    <p className="text-red-300 font-bold text-sm mb-2">🎬 30 MIN DE PAZ SEM CULPA:</p>
-                    <p className="text-pink-100 text-base">
-                      Cinema sem anúncios + Sons calmantes profissionais.<br/>
-                      <span className="text-white font-semibold">Você merece sentar e respirar.</span>
-                    </p>
+                  <div className="bg-red-900/40 rounded-xl p-6 border-2 border-red-400/40">
+                    <p className="text-red-300 font-bold text-base mb-3">SONS CALMANTES PREMIUM</p>
+                    <ul className="text-pink-100 text-sm space-y-2 leading-relaxed">
+                      <li><span className="text-white font-semibold">→</span> 50+ Áudios em 4K Alta Qualidade</li>
+                      <li><span className="text-white font-semibold">→</span> Ruído Branco Profissional</li>
+                      <li><span className="text-white font-semibold">→</span> Sons da Natureza (Chuva, Ondas, Vento)</li>
+                      <li><span className="text-white font-semibold">→</span> Batidas Cardíacas Maternas</li>
+                      <li><span className="text-white font-semibold">→</span> Canções de Ninar Clássicas</li>
+                      <li><span className="text-white font-semibold">→</span> Reprodução Contínua 12h</li>
+                      <li><span className="text-white font-semibold">→</span> Download para Offline</li>
+                    </ul>
                   </div>
+                  
+                  <div className="bg-red-900/40 rounded-xl p-6 border-2 border-red-400/40">
+                    <p className="text-red-300 font-bold text-base mb-3">CINEMA DA MAMÃE</p>
+                    <ul className="text-pink-100 text-sm space-y-2 leading-relaxed">
+                      <li><span className="text-white font-semibold">→</span> Streaming SEM Anúncios</li>
+                      <li><span className="text-white font-semibold">→</span> Filmes e Séries Ilimitados</li>
+                      <li><span className="text-white font-semibold">→</span> Qualidade HD e 4K</li>
+                      <li><span className="text-white font-semibold">→</span> Dramas, Comédias, Romances</li>
+                      <li><span className="text-white font-semibold">→</span> Documentários</li>
+                      <li><span className="text-white font-semibold">→</span> Download para Offline</li>
+                      <li><span className="text-white font-semibold">→</span> Conteúdo Atualizado Semanalmente</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="mt-6 bg-slate-900/60 rounded-xl p-5 border border-white/20">
+                  <p className="text-center text-pink-100 text-base leading-relaxed">
+                    <span className="text-white font-bold">Acesso Vitalício.</span> Sem Mensalidades. Sem Enrolação.<br/>
+                    <span className="text-red-300">Pague 1x. Use pra sempre. Atualizações futuras GRÁTIS.</span>
+                  </p>
                 </div>
               </div>
               
@@ -142,7 +176,7 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="flex items-center justify-center flex-col mb-12 text-center">
             <div className="bg-red-900/30 border border-red-500/40 rounded-2xl p-8 mb-8 max-w-4xl">
-              <p className="text-red-300 text-sm font-bold mb-3">⚠️ SE VOCÊ JÁ SENTIU ISSO, LEIA:</p>
+              <p className="text-red-300 text-sm font-bold mb-3">SE VOCÊ JÁ SENTIU ISSO, LEIA:</p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
                 O Dia Que Tu Chora No Banheiro.<br />
                 O Dia Que Tu Quer Gritar.<br />
@@ -154,9 +188,9 @@ const Home = () => {
                 <span className="text-white font-semibold">Sua identidade antiga morreu pra dar lugar a uma nova. E DOI DEMAIS.</span>
               </p>
               <p className="text-red-200 text-lg font-bold">
-                Não é frescura. Não é falta de amor. É a porra da realidade.
+                Não é frescura. Não é falta de amor. É a realidade brutal.
               </p>
-              <p className="text-pink-200 text-sm mt-3 italic">
+              <p className="text-pink-200 text-sm mt-3">
                 E ninguém te deu as ferramentas certas pra sobreviver a isso.
               </p>
             </div>
@@ -197,7 +231,7 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-12 text-center shadow-2xl shadow-red-500/20 border border-red-500/30 backdrop-blur">
             <div className="inline-flex items-center gap-2 bg-red-500/20 px-6 py-2 rounded-full mb-6 border border-red-500/30">
-              <span className="text-sm font-bold text-red-300">🔥 MAIS DE 10.000 MÃES SAÍRAM DO LIMITE</span>
+              <span className="text-sm font-bold text-red-300">MAIS DE 10.000 MÃES SAÍRAM DO LIMITE</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
               Você Tem 2 Escolhas:<br />
@@ -206,24 +240,24 @@ const Home = () => {
             
             <div className="grid md:grid-cols-2 gap-6 mb-8 max-w-4xl mx-auto text-left">
               <div className="bg-slate-800/60 border border-slate-600/50 rounded-xl p-6">
-                <p className="text-red-400 font-bold text-lg mb-3">❌ Se você não fizer nada:</p>
+                <p className="text-red-400 font-bold text-lg mb-3">Se você não fizer nada:</p>
                 <ul className="text-slate-300 space-y-2 text-sm">
-                  <li>• Mais noites sem dormir</li>
-                  <li>• Mais crises de choro no banheiro</li>
-                  <li>• Mais culpa por "não ser boa o suficiente"</li>
-                  <li>• Seu relacionamento desmorona</li>
-                  <li>• Você perde quem você era</li>
+                  <li>Mais noites sem dormir</li>
+                  <li>Mais crises de choro no banheiro</li>
+                  <li>Mais culpa por "não ser boa o suficiente"</li>
+                  <li>Seu relacionamento desmorona</li>
+                  <li>Você perde quem você era</li>
                 </ul>
               </div>
               
               <div className="bg-red-900/40 border-2 border-red-400/50 rounded-xl p-6">
-                <p className="text-white font-bold text-lg mb-3">✓ Se você agir HOJE:</p>
+                <p className="text-white font-bold text-lg mb-3">Se você agir HOJE:</p>
                 <ul className="text-pink-100 space-y-2 text-sm">
-                  <li>• Bebê dormindo em 20 minutos</li>
-                  <li>• Você descansa DE VERDADE</li>
-                  <li>• Zero culpa: você entende o que tá sentindo</li>
-                  <li>• 7 técnicas ninja testadas por 10.000+ mães</li>
-                  <li>• Sua sanidade mental DE VOLTA</li>
+                  <li>Bebê dormindo em 20 minutos</li>
+                  <li>Você descansa DE VERDADE</li>
+                  <li>Zero culpa: você entende o que tá sentindo</li>
+                  <li>7 técnicas ninja testadas por 10.000+ mães</li>
+                  <li>Sua sanidade mental DE VOLTA</li>
                 </ul>
               </div>
             </div>
@@ -249,7 +283,7 @@ const Home = () => {
               </Button>
             </Link>
             <p className="text-sm text-slate-400 mt-6">
-              ⚡ Acesso instantâneo após o pagamento • 🔒 Compra 100% segura • ✅ Garantia de 7 dias
+              Acesso instantâneo após o pagamento - Compra 100% segura - Garantia de 7 dias
             </p>
           </div>
         </div>
