@@ -25,23 +25,23 @@ const ComboVitalicio = () => {
     { 
       image: guiaMaeNinja, 
       title: "Guia da Mãe Ninja 2.0",
-      description: "O guia completo para mães que querem dominar a maternidade real, sem filtros. Estratégias práticas, organizadas e diretas para lidar com o caos diário."
+      description: "7 técnicas científicas pra fazer bebê dormir em 2 minutos. Testado por 10.000+ mães exaustas. Rotinas passo a passo que FUNCIONAM quando você tá no limite."
     },
     { 
       image: euOdeioSerMae, 
       title: "Eu Odeio Ser Mãe",
-      description: "O livro que vai te fazer sentir menos sozinha. Histórias reais, sem romantização, sobre os desafios, frustrações e verdades que ninguém te contou sobre ser mãe."
+      description: "A verdade crua que ninguém tem coragem de dizer. 127 páginas de histórias reais de mães que também odeiam. Você NÃO está sozinha nessa."
     },
     { 
       image: sonsCalmantes, 
       title: "Sons Calmantes Premium",
-      description: "Biblioteca completa de sons relaxantes para acalmar seu bebê e criar rotinas de sono mais tranquilas. Técnicas comprovadas para noites mais serenas."
+      description: "15 sons profissionais que acalmam bebê em segundos. White noise, batimentos cardíacos, chuva. Os mesmos usados em UTIs neonatais."
     },
     { 
       image: cinemaMamae, 
       title: "Cinema da Mamãe",
       badge: "GRÁTIS",
-      description: "Acesso vitalício a uma coleção exclusiva de conteúdos audiovisuais sobre maternidade real. Documentários, entrevistas e histórias inspiradoras de mães reais."
+      description: "Streaming sem anúncios. Filmes, séries e documentários pra você assistir quando sobrar 5 minutos. Porque mãe também precisa desligar."
     },
   ];
 
@@ -69,11 +69,11 @@ const ComboVitalicio = () => {
             <span className="text-sm font-semibold text-red-400">Oferta Exclusiva</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-500 via-red-400 to-red-300 bg-clip-text text-transparent">
-            Combo Vitalício Premium
+            Maternidade SEM Filtro
           </h1>
           <p className="text-xl text-slate-300 leading-relaxed">
-            Acesso completo e permanente a todo o conteúdo MAMAEZEN.<br />
-            Investimento único, benefícios para toda a vida.
+            Bebê dormindo + Sua sanidade mental preservada + Verdades que ninguém te conta.<br />
+            Pague uma vez. Use pra sempre.
           </p>
         </div>
 
@@ -127,11 +127,11 @@ const ComboVitalicio = () => {
               </div>
 
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-red-100">
-                Combo Vitalício Premium
+                Acabe Com Isso HOJE
               </h2>
               
               <p className="text-base md:text-lg text-slate-300 mb-8 max-w-md">
-                Acesso completo a todos os produtos + Cinema da Mamãe de bônus
+                Tudo que você precisa pra sobreviver à maternidade real. Sem enrolação.
               </p>
 
               <div className="mb-8 flex flex-col items-center w-full">
@@ -153,11 +153,11 @@ const ComboVitalicio = () => {
               <a href="https://pay.kirvano.com/ffe6e704-5057-4d62-8658-909d09cbb054" target="_blank" rel="noopener noreferrer" className="block w-full">
                 <Button 
                   size="lg" 
-                  className="w-full max-w-md h-auto py-5 px-8 rounded-xl shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold mb-6"
+                  className="w-full max-w-md h-auto py-6 px-6 rounded-xl shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-0 group text-white font-bold mb-6"
                 >
-                  <span className="flex items-center justify-center gap-3 w-full text-lg">
+                  <span className="flex items-center justify-center gap-2 w-full text-base sm:text-lg">
                     <Sparkles className="w-5 h-5 flex-shrink-0 group-hover:rotate-180 transition-transform duration-500" />
-                    <span>Garantir Acesso Vitalício</span>
+                    <span className="truncate">Quero Tudo Agora</span>
                     <Crown className="w-5 h-5 flex-shrink-0 group-hover:scale-125 transition-transform duration-300" />
                   </span>
                 </Button>
