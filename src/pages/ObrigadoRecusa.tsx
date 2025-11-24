@@ -154,7 +154,7 @@ const ObrigadoRecusa = () => {
               <Button
                 onClick={() => {
                   trackChangeOfMind();
-                  navigate("/combo-vitalicio");
+                  navigate("/quiz-final");
                 }}
                 className="w-full h-16 text-xl font-bold bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-500 hover:to-pink-600 text-white shadow-xl hover:shadow-pink-500/50 transition-all duration-300"
               >

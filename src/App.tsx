@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LeadCapture from "./pages/LeadCapture";
 import QuizFunil from "./pages/QuizFunil";
+import QuizFinal from "./pages/QuizFinal";
 import Home from "./pages/Home";
 import ComboVitalicio from "./pages/ComboVitalicio";
 import ProdutosIndividuais from "./pages/ProdutosIndividuais";
@@ -28,6 +29,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<LeadCapture />} />
           <Route path="/quiz" element={<QuizFunil />} />
+          <Route path="/quiz-final" element={<QuizFinal />} />
           <Route path="/home" element={<Home />} />
           <Route path="/combo-vitalicio" element={<ComboVitalicio />} />
           <Route path="/produtos-individuais" element={<ProdutosIndividuais />} />
