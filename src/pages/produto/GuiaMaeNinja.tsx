@@ -18,9 +18,9 @@ const GuiaMaeNinja = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       <header className="border-b border-amber-500/20 bg-slate-950/50 backdrop-blur-lg sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
-          <Link to="/">
+          <Link to="/produtos-individuais">
             <Button variant="ghost" className="hover:bg-amber-500/10 text-amber-100">
-              ← Voltar para Home
+              ← Voltar
             </Button>
           </Link>
         </div>
