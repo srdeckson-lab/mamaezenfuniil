@@ -17,7 +17,7 @@ const LeadCapture = () => {
   });
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.name || !formData.email || !formData.phone) {
@@ -25,15 +25,37 @@ const LeadCapture = () => {
       return;
     }
 
-    // Store lead data in localStorage for now
-    localStorage.setItem("leadData", JSON.stringify(formData));
+    // Cole aqui a URL do seu Google Apps Script
+    const GOOGLE_SCRIPT_URL = "COLE_SUA_URL_AQUI";
     
-    toast.success("Ótimo! Agora vamos descobrir o melhor para você...");
-    
-    // Navigate to quiz after short delay
-    setTimeout(() => {
-      navigate("/quiz");
-    }, 1000);
+    try {
+      // Enviar para Google Sheets
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+        }),
+      });
+
+      // Store lead data in localStorage
+      localStorage.setItem("leadData", JSON.stringify(formData));
+      
+      toast.success("Ótimo! Agora vamos descobrir o melhor para você...");
+      
+      // Navigate to quiz after short delay
+      setTimeout(() => {
+        navigate("/quiz");
+      }, 1000);
+    } catch (error) {
+      console.error("Erro ao enviar dados:", error);
+      toast.error("Erro ao processar. Tente novamente.");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
