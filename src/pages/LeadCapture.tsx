@@ -61,11 +61,31 @@ const LeadCapture = () => {
           className="w-full max-w-2xl"
         >
           <Card className="overflow-hidden border border-red-900/30 shadow-2xl shadow-red-900/60 bg-gradient-to-br from-black/95 to-slate-950/95 backdrop-blur-xl p-6 md:p-10">
+            {/* Headline Impactante */}
+            <motion.div
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.8 }}
+              className="text-center mb-8 space-y-3"
+            >
+              <h1 className="text-3xl md:text-5xl font-black text-white leading-tight">
+                Você Não Está{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-700">
+                  Sozinha
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 font-medium max-w-2xl mx-auto">
+                Milhares de mães estão vivendo o mesmo pesadelo em silêncio.
+                <br className="hidden md:block" />
+                É hora de quebrar esse ciclo.
+              </p>
+            </motion.div>
+
             {/* Imagem do Livro */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.3 }}
               className="text-center mb-6"
             >
               <img 
