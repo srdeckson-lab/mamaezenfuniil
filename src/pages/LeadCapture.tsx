@@ -29,18 +29,17 @@ const LeadCapture = () => {
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgQwHOK6JYIi6pWO7tln7MgaMkxzIA2UH3dOpgP6PnCsjq5q64wO2s6hD9YLClJK35/exec";
     
     try {
+      // Montar dados como formulário para o Google Apps Script
+      const formBody = new FormData();
+      formBody.append("name", formData.name);
+      formBody.append("phone", formData.phone);
+      formBody.append("email", formData.email);
+
       // Enviar para Google Sheets
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-        }),
+        body: formBody,
       });
 
       // Store lead data in localStorage
