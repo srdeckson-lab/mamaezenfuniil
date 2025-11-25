@@ -26,7 +26,7 @@ const LeadCapture = () => {
     }
 
     // Cole aqui a URL do seu Google Apps Script
-    const GOOGLE_SCRIPT_URL = "https://docs.google.com/spreadsheets/d/1orGIptGx7z-hzlcQRocvG9T00v9Px5AHXQlO2DEkmDc/edit?gid=0#gid=0";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgQwHOK6JYIi6pWO7tln7MgaMkxzIA2UH3dOpgP6PnCsjq5q64wO2s6hD9YLClJK35/exec";
     
     try {
       // Enviar para Google Sheets
