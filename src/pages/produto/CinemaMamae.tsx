@@ -1,10 +1,16 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Crown, Film, Popcorn, Sparkles, Star, Tv } from "lucide-react";
 import { Link } from "react-router-dom";
+import { trackPageView, trackBeginCheckout } from "@/lib/analytics";
 import cinemaMamae from "@/assets/cinema-mamae.jpg";
 
 const CinemaMamae = () => {
+  useEffect(() => {
+    trackPageView('/produto/cinema-mamae', 'Cinema da Mamãe - MAMAEZEN');
+  }, []);
+
   const features = [
     "Streaming Sem Anúncios",
     "Filmes e Séries Ilimitados",

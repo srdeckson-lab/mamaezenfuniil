@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { trackPageView, trackFormStart, trackLeadSubmitted, trackButtonClick } from "@/lib/analytics";
 import bannerEuOdeioSerMae from "@/assets/banner-eu-odeio-ser-mae.png";
 import seloGarantia from "@/assets/selo-garantia.png";
 import leadCaptureBg from "@/assets/lead-capture-bg.png";
@@ -16,6 +17,12 @@ const LeadCapture = () => {
     phone: ""
   });
   const navigate = useNavigate();
+  const [hasTrackedFormStart, setHasTrackedFormStart] = useState(false);
+
+  useEffect(() => {
+    // Track page view quando componente montar
+    trackPageView('/lead-capture', 'Captura de Lead - MAMAEZEN');
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,6 +53,9 @@ const LeadCapture = () => {
       // Store lead data in localStorage
       localStorage.setItem("leadData", JSON.stringify(formData));
       
+      // Track lead submission
+      trackLeadSubmitted(formData);
+      
       toast.success("Ótimo! Agora vamos descobrir o melhor para você...");
       
       // Navigate to quiz after short delay
@@ -59,6 +69,12 @@ const LeadCapture = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Track form start apenas na primeira interação
+    if (!hasTrackedFormStart) {
+      trackFormStart('lead_capture_form');
+      setHasTrackedFormStart(true);
+    }
+    
     setFormData({
       ...formData,
       [e.target.name]: e.target.value

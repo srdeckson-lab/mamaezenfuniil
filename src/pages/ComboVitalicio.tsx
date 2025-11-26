@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Crown, Gift, Sparkles, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { trackPageView, trackButtonClick, trackBeginCheckout } from "@/lib/analytics";
 import cinemaMamae from "@/assets/cinema-mamae.jpg";
 import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
 import guiaMaeNinja from "@/assets/guia-mae-ninja.png";
@@ -10,6 +12,10 @@ import UrgencyBar from "@/components/UrgencyBar";
 import SocialProofNotifications from "@/components/SocialProofNotifications";
 
 const ComboVitalicio = () => {
+  useEffect(() => {
+    trackPageView('/combo-vitalicio', 'Combo Vitalício - MAMAEZEN');
+  }, []);
+
   const benefits = [
     "Guia da Mãe Ninja 2.0 - Completo",
     "Eu Odeio Ser Mãe - Livro Digital",

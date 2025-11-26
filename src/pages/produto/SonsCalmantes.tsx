@@ -1,10 +1,16 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Crown, Download, Music, Sparkles, Volume2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { trackPageView, trackBeginCheckout } from "@/lib/analytics";
 import sonsCalmantes from "@/assets/sons-calmantes.jpg";
 
 const SonsCalmantes = () => {
+  useEffect(() => {
+    trackPageView('/produto/sons-calmantes', 'Sons Calmantes - MAMAEZEN');
+  }, []);
+
   const features = [
     "50+ Áudios em Alta Qualidade (4K)",
     "Reprodução Contínua Sem Interrupções",

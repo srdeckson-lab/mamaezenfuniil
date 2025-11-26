@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useNavigate } from "react-router-dom";
-import { trackBeginCheckout } from "@/lib/analytics";
+import { trackBeginCheckout, trackPageView, trackQuizStarted, trackQuizStep, trackQuizCompleted } from "@/lib/analytics";
 import mae3amBanheiro from "@/assets/quiz-final-mae-3am-banheiro.jpg";
 import identidadePerdida from "@/assets/quiz-final-identidade-perdida.jpg";
 import noiteSemFim from "@/assets/quiz-final-noite-sem-fim.jpg";
@@ -18,6 +18,10 @@ const QuizFinal = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Track page view e início do quiz
+    trackPageView('/quiz', 'Quiz MAMAEZEN');
+    trackQuizStarted();
+    
     const leadData = localStorage.getItem("leadData");
     if (leadData) {
       const data = JSON.parse(leadData);
@@ -85,11 +89,20 @@ const QuizFinal = () => {
   ];
 
   const handleAnswer = (value: string) => {
+    const currentQuestion = quizSteps[step];
+    
+    // Track resposta da etapa atual
+    trackQuizStep(step + 1, currentQuestion.question, value);
+    
     setAnswers([...answers, value]);
+    
     if (step < quizSteps.length - 1) {
       setTimeout(() => setStep(step + 1), 400);
     } else {
-      // Última resposta - ir para Combo Vitalício
+      // Última resposta - quiz completado
+      trackQuizCompleted(quizSteps.length);
+      
+      // Ir para Combo Vitalício
       setTimeout(() => {
         trackBeginCheckout();
         navigate("/combo-vitalicio");
