@@ -1,10 +1,16 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Crown, Download, Heart, Sparkles, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { trackPageView, trackBeginCheckout } from "@/lib/analytics";
 import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
 
 const EuOdeioSerMae = () => {
+  useEffect(() => {
+    trackPageView('/produto/eu-odeio-ser-mae', 'Eu Odeio Ser Mãe - MAMAEZEN');
+  }, []);
+
   const features = [
     "Abordagem Honesta e Sem Julgamentos",
     "Histórias Reais de Mães",

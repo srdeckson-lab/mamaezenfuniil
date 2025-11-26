@@ -1,15 +1,20 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { AlertCircle, Heart } from "lucide-react";
-import { trackChangeOfMind } from "@/lib/analytics";
+import { trackChangeOfMind, trackPageView, trackButtonClick } from "@/lib/analytics";
 import maeExausta from "@/assets/mae-exausta-recusa.png";
 import maePerdida from "@/assets/mae-perdida-recusa.png";
 import maeSozinha from "@/assets/mae-sozinha-recusa.png";
 
 const ObrigadoRecusa = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    trackPageView('/obrigado-recusa', 'Obrigado Recusa - MAMAEZEN');
+  }, []);
 
   const painPoints = [
     {

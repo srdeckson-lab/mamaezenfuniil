@@ -1,10 +1,16 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Check, Crown, Download, Lock, Sparkles, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { trackPageView, trackBeginCheckout } from "@/lib/analytics";
 import guiaMaeNinja from "@/assets/guia-mae-ninja.png";
 
 const GuiaMaeNinja = () => {
+  useEffect(() => {
+    trackPageView('/produto/guia-mae-ninja', 'Guia da Mãe Ninja - MAMAEZEN');
+  }, []);
+
   const features = [
     "7 Segredos Cientificamente Comprovados",
     "Método Passo a Passo Ilustrado",

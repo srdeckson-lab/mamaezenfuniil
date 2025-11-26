@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Clock, Shield, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { trackProductView, trackBeginCheckout } from "@/lib/analytics";
+import { trackProductView, trackBeginCheckout, trackPageView, trackButtonClick } from "@/lib/analytics";
 import guiaMaeNinja from "@/assets/guia-mae-ninja.png";
 import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
 import sonsCalmantes from "@/assets/sons-calmantes.jpg";
@@ -10,6 +11,11 @@ import seloGarantia from "@/assets/selo-garantia.png";
 
 const ProdutosIndividuais = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Track page view
+    trackPageView('/produtos-individuais', 'Produtos Individuais - MAMAEZEN');
+  }, []);
 
   const produtos = [
     {
@@ -53,7 +59,10 @@ const ProdutosIndividuais = () => {
             Escolha Seu Caminho Para a Paz
           </h2>
           <Button
-            onClick={() => navigate("/obrigado")}
+            onClick={() => {
+              trackButtonClick('nao_quero_nada', 'produtos_individuais_header');
+              navigate("/obrigado");
+            }}
             variant="ghost"
             size="sm"
             className="text-slate-400 hover:text-slate-200 hover:bg-pink-500/10"
@@ -204,7 +213,10 @@ const ProdutosIndividuais = () => {
               Que tal ter TUDO isso + muito mais por um preço especial?
             </p>
             <Button
-              onClick={() => navigate("/combo-vitalicio")}
+              onClick={() => {
+                trackButtonClick('ver_oferta_especial', 'produtos_individuais_upsell');
+                navigate("/combo-vitalicio");
+              }}
               className="w-full max-w-md py-6 text-lg font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white shadow-lg hover:shadow-red-500/50 transition-all duration-300"
             >
               Ver Oferta Especial
@@ -213,7 +225,10 @@ const ProdutosIndividuais = () => {
           </div>
           
           <Button
-            onClick={() => navigate("/obrigado")}
+            onClick={() => {
+              trackButtonClick('nao_prefiro_continuar', 'produtos_individuais_footer');
+              navigate("/obrigado");
+            }}
             variant="ghost"
             className="text-slate-400 hover:text-slate-200 text-sm"
           >

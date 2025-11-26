@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Crown, Gift } from "lucide-react";
 import { Link } from "react-router-dom";
+import { trackPageView, trackButtonClick } from "@/lib/analytics";
 import guiaMaeNinja from "@/assets/guia-mae-ninja.png";
 import euOdeioSerMae from "@/assets/eu-odeio-ser-mae.png";
 import sonsCalmantes from "@/assets/sons-calmantes.jpg";
@@ -11,6 +13,10 @@ import bannerHero from "@/assets/banner-hero.png";
 import maeExausta from "@/assets/mae-exausta.png";
 
 const Home = () => {
+  useEffect(() => {
+    trackPageView('/', 'Home - MAMAEZEN');
+  }, []);
+
   const products = [
     {
       title: "Guia da Mãe Ninja 2.0",

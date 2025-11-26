@@ -1,10 +1,16 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Heart, Mail, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
+import { trackPageView } from "@/lib/analytics";
 import logoMamaezen from "@/assets/logo-mamaezen.png";
 
 const Obrigado = () => {
+  useEffect(() => {
+    trackPageView('/obrigado', 'Obrigado - MAMAEZEN');
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-pink-950 to-slate-900 flex items-center justify-center px-4 py-8">
       <Card className="max-w-2xl w-full bg-gradient-to-br from-slate-800/95 to-pink-900/60 backdrop-blur-lg border-pink-500/30 p-8 md:p-12">
