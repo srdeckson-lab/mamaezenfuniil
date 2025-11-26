@@ -4,6 +4,7 @@
 declare global {
   interface Window {
     gtag: (command: string, eventName: string, params?: Record<string, any>) => void;
+    pintrk: (event: string, eventName?: string, params?: Record<string, any>) => void;
     beginCheckout: () => void;
     purchaseApproved: (valor: number, transacao: string) => void;
     viewUpsell: () => void;
@@ -19,11 +20,23 @@ export const trackBeginCheckout = () => {
   if (typeof window !== 'undefined' && window.beginCheckout) {
     window.beginCheckout();
   }
+  // Pinterest tracking
+  if (typeof window !== 'undefined' && window.pintrk) {
+    window.pintrk('track', 'checkout');
+  }
 };
 
 export const trackPurchaseApproved = (valor: number, transacao: string) => {
   if (typeof window !== 'undefined' && window.purchaseApproved) {
     window.purchaseApproved(valor, transacao);
+  }
+  // Pinterest tracking
+  if (typeof window !== 'undefined' && window.pintrk) {
+    window.pintrk('track', 'checkout', {
+      value: valor,
+      currency: 'BRL',
+      order_id: transacao
+    });
   }
 };
 
@@ -48,6 +61,10 @@ export const trackRejectUpsell = () => {
 export const trackSignup = () => {
   if (typeof window !== 'undefined' && window.signupEvent) {
     window.signupEvent();
+  }
+  // Pinterest tracking
+  if (typeof window !== 'undefined' && window.pintrk) {
+    window.pintrk('track', 'signup');
   }
 };
 
@@ -83,6 +100,10 @@ export const trackPageView = (pagePath: string, pageTitle: string) => {
       page_title: pageTitle
     });
   }
+  // Pinterest tracking
+  if (typeof window !== 'undefined' && window.pintrk) {
+    window.pintrk('track', 'pagevisit');
+  }
 };
 
 // Evento: Lead iniciou o formulário
@@ -102,12 +123,24 @@ export const trackLeadSubmitted = (leadData: { name: string; email: string; phon
       lead_email: leadData.email
     });
   }
+  // Pinterest tracking
+  if (typeof window !== 'undefined' && window.pintrk) {
+    window.pintrk('track', 'lead', {
+      lead_type: 'Newsletter'
+    });
+  }
 };
 
 // Evento: Quiz iniciado
 export const trackQuizStarted = () => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', 'quiz_started');
+  }
+  // Pinterest tracking
+  if (typeof window !== 'undefined' && window.pintrk) {
+    window.pintrk('track', 'custom', {
+      event_name: 'quiz_started'
+    });
   }
 };
 
@@ -126,6 +159,13 @@ export const trackQuizStep = (stepNumber: number, stepTitle: string, answer: str
 export const trackQuizCompleted = (totalSteps: number) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', 'quiz_completed', {
+      total_steps: totalSteps
+    });
+  }
+  // Pinterest tracking
+  if (typeof window !== 'undefined' && window.pintrk) {
+    window.pintrk('track', 'custom', {
+      event_name: 'quiz_completed',
       total_steps: totalSteps
     });
   }
